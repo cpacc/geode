@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Technical details | GEODE USER’S MANUAL</title>
+  <meta name="description" content="Chapter 3 Technical details | GEODE USER’S MANUAL" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Technical details | GEODE USER’S MANUAL" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Technical details | GEODE USER’S MANUAL" />
+  
+  
+  
+
+
+
+<meta name="date" content="2021-03-31" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="usage.html"/>
+<link rel="next" href="examples.html"/>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Sections</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="background.html"><a href="background.html"><i class="fa fa-check"></i><b>1</b> Background</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="background.html"><a href="background.html#purpose"><i class="fa fa-check"></i><b>1.1</b> Purpose</a></li>
+<li class="chapter" data-level="1.2" data-path="background.html"><a href="background.html#system-requirements"><i class="fa fa-check"></i><b>1.2</b> System requirements</a></li>
+<li class="chapter" data-level="1.3" data-path="background.html"><a href="background.html#downloading-and-installing"><i class="fa fa-check"></i><b>1.3</b> Downloading and installing</a></li>
+<li class="chapter" data-level="1.4" data-path="background.html"><a href="background.html#help-files"><i class="fa fa-check"></i><b>1.4</b> Help files</a></li>
+<li class="chapter" data-level="1.5" data-path="background.html"><a href="background.html#boundary-files-and-sample-data-sets"><i class="fa fa-check"></i><b>1.5</b> Boundary files and sample data sets</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="usage.html"><a href="usage.html"><i class="fa fa-check"></i><b>2</b> Using geode</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="usage.html"><a href="usage.html#structure-of-the-tool"><i class="fa fa-check"></i><b>2.1</b> Structure of the tool</a></li>
+<li class="chapter" data-level="2.2" data-path="usage.html"><a href="usage.html#getting-started"><i class="fa fa-check"></i><b>2.2</b> Getting started</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="usage.html"><a href="usage.html#setup"><i class="fa fa-check"></i><b>2.2.1</b> Setup</a></li>
+<li class="chapter" data-level="2.2.2" data-path="usage.html"><a href="usage.html#importing-data-with-geo_import"><i class="fa fa-check"></i><b>2.2.2</b> Importing data with <code>geo_import()</code></a></li>
+<li class="chapter" data-level="2.2.3" data-path="usage.html"><a href="usage.html#creating-maps-with-geo_plot"><i class="fa fa-check"></i><b>2.2.3</b> Creating maps with <code>geo_plot()</code></a></li>
+<li class="chapter" data-level="2.2.4" data-path="usage.html"><a href="usage.html#generating-spatial-statistics-with-geo_calculate"><i class="fa fa-check"></i><b>2.2.4</b> Generating spatial statistics with <code>geo_calculate()</code></a></li>
+<li class="chapter" data-level="2.2.5" data-path="usage.html"><a href="usage.html#additional-information-on-exporting-output"><i class="fa fa-check"></i><b>2.2.5</b> Additional information on exporting output</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="details.html"><a href="details.html"><i class="fa fa-check"></i><b>3</b> Technical details</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="details.html"><a href="details.html#geo_import"><i class="fa fa-check"></i><b>3.1</b> <code>geo_import()</code></a></li>
+<li class="chapter" data-level="3.2" data-path="details.html"><a href="details.html#geo_plot"><i class="fa fa-check"></i><b>3.2</b> <code>geo_plot()</code></a></li>
+<li class="chapter" data-level="3.3" data-path="details.html"><a href="details.html#geo_distance"><i class="fa fa-check"></i><b>3.3</b> <code>geo_distance()</code></a></li>
+<li class="chapter" data-level="3.4" data-path="details.html"><a href="details.html#geo_detect"><i class="fa fa-check"></i><b>3.4</b> <code>geo_detect()</code></a></li>
+<li class="chapter" data-level="3.5" data-path="details.html"><a href="details.html#geo_calculate"><i class="fa fa-check"></i><b>3.5</b> <code>geo_calculate()</code></a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="details.html"><a href="details.html#global-spatial-autocorrelation"><i class="fa fa-check"></i><b>3.5.1</b> global spatial autocorrelation</a></li>
+<li class="chapter" data-level="3.5.2" data-path="details.html"><a href="details.html#local-spatial-autocorrelation"><i class="fa fa-check"></i><b>3.5.2</b> local spatial autocorrelation</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="details.html"><a href="details.html#geo_export"><i class="fa fa-check"></i><b>3.6</b> <code>geo_export()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="examples.html"><a href="examples.html"><i class="fa fa-check"></i><b>4</b> Examples</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="examples.html"><a href="examples.html#example-1-importing-and-wrangling-data"><i class="fa fa-check"></i><b>4.1</b> Example 1: Importing and wrangling data</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="examples.html"><a href="examples.html#background-1"><i class="fa fa-check"></i><b>4.1.1</b> Background</a></li>
+<li class="chapter" data-level="4.1.2" data-path="examples.html"><a href="examples.html#setup-1"><i class="fa fa-check"></i><b>4.1.2</b> Setup</a></li>
+<li class="chapter" data-level="4.1.3" data-path="examples.html"><a href="examples.html#data-importation"><i class="fa fa-check"></i><b>4.1.3</b> Data importation</a></li>
+<li class="chapter" data-level="4.1.4" data-path="examples.html"><a href="examples.html#data-wrangling"><i class="fa fa-check"></i><b>4.1.4</b> Data wrangling</a></li>
+<li class="chapter" data-level="4.1.5" data-path="examples.html"><a href="examples.html#data-export"><i class="fa fa-check"></i><b>4.1.5</b> Data export</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="examples.html"><a href="examples.html#example-2-mapping-and-proximity-analysis"><i class="fa fa-check"></i><b>4.2</b> Example 2: mapping and proximity analysis</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="examples.html"><a href="examples.html#background-2"><i class="fa fa-check"></i><b>4.2.1</b> Background</a></li>
+<li class="chapter" data-level="4.2.2" data-path="examples.html"><a href="examples.html#setup-2"><i class="fa fa-check"></i><b>4.2.2</b> Setup</a></li>
+<li class="chapter" data-level="4.2.3" data-path="examples.html"><a href="examples.html#importing-data"><i class="fa fa-check"></i><b>4.2.3</b> Importing data</a></li>
+<li class="chapter" data-level="4.2.4" data-path="examples.html"><a href="examples.html#creating-maps"><i class="fa fa-check"></i><b>4.2.4</b> Creating maps</a></li>
+<li class="chapter" data-level="4.2.5" data-path="examples.html"><a href="examples.html#running-a-proximity-analysis"><i class="fa fa-check"></i><b>4.2.5</b> Running a proximity analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="examples.html"><a href="examples.html#example-3-cluster-detection"><i class="fa fa-check"></i><b>4.3</b> Example 3: Cluster detection</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="examples.html"><a href="examples.html#background-3"><i class="fa fa-check"></i><b>4.3.1</b> Background</a></li>
+<li class="chapter" data-level="4.3.2" data-path="examples.html"><a href="examples.html#setup-3"><i class="fa fa-check"></i><b>4.3.2</b> Setup</a></li>
+<li class="chapter" data-level="4.3.3" data-path="examples.html"><a href="examples.html#importing-data-1"><i class="fa fa-check"></i><b>4.3.3</b> Importing data</a></li>
+<li class="chapter" data-level="4.3.4" data-path="examples.html"><a href="examples.html#simulating-health-event-data"><i class="fa fa-check"></i><b>4.3.4</b> Simulating health event data</a></li>
+<li class="chapter" data-level="4.3.5" data-path="examples.html"><a href="examples.html#detecting-clusters"><i class="fa fa-check"></i><b>4.3.5</b> Detecting clusters</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="help.html"><a href="help.html"><i class="fa fa-check"></i><b>5</b> Help files</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="help.html"><a href="help.html#geo_import-1"><i class="fa fa-check"></i><b>5.1</b> <code>geo_import()</code></a></li>
+<li class="chapter" data-level="5.2" data-path="help.html"><a href="help.html#geo_plot-1"><i class="fa fa-check"></i><b>5.2</b> <code>geo_plot()</code></a></li>
+<li class="chapter" data-level="5.3" data-path="help.html"><a href="help.html#geo_distance-1"><i class="fa fa-check"></i><b>5.3</b> <code>geo_distance()</code></a></li>
+<li class="chapter" data-level="5.4" data-path="help.html"><a href="help.html#geo_detect-1"><i class="fa fa-check"></i><b>5.4</b> <code>geo_detect()</code></a></li>
+<li class="chapter" data-level="5.5" data-path="help.html"><a href="help.html#geo_calculate-1"><i class="fa fa-check"></i><b>5.5</b> <code>geo_calculate()</code></a></li>
+<li class="chapter" data-level="5.6" data-path="help.html"><a href="help.html#geo_export-1"><i class="fa fa-check"></i><b>5.6</b> <code>geo_export()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="refs.html"><a href="refs.html"><i class="fa fa-check"></i><b>6</b> References</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="refs.html"><a href="refs.html#key-references"><i class="fa fa-check"></i><b>6.1</b> Key references</a></li>
+<li class="chapter" data-level="6.2" data-path="refs.html"><a href="refs.html#additional-resources"><i class="fa fa-check"></i><b>6.2</b> Additional resources</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="refs.html"><a href="refs.html#books"><i class="fa fa-check"></i><b>6.2.1</b> Books</a></li>
+<li class="chapter" data-level="6.2.2" data-path="refs.html"><a href="refs.html#papers"><i class="fa fa-check"></i><b>6.2.2</b> Papers</a></li>
+<li class="chapter" data-level="6.2.3" data-path="refs.html"><a href="refs.html#websites-and-online-courses"><i class="fa fa-check"></i><b>6.2.3</b> Websites and online courses</a></li>
+<li class="chapter" data-level="6.2.4" data-path="refs.html"><a href="refs.html#tutorials-and-examples"><i class="fa fa-check"></i><b>6.2.4</b> Tutorials and examples</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Created with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">GEODE USER’S MANUAL</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="details" class="section level1" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Technical details</h1>
+<p>Here, technical/statistical details and references are provided for the core functions in <strong>geode</strong>.</p>
+<div id="geo_import" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> <code>geo_import()</code></h2>
+<p>This function imports spatial or attribute data from an existing source file. Spatial files must be valid shapefiles (.shp), whereas attribute files can be any georeferenced data from a standard comma separate values (.csv) file.</p>
+<p>Importation of shapefiles makes use of the <code>st_read()</code> function from the <strong>sf</strong> package. Simplification of shapefiles during import (simplify = TRUE) removes vertices, resulting is smaller but less detailed geographic boundaries. Boundaries are simplified to a level of 1000 m. This is useful for generating more manageable working files for experimental use. Although the process attempts to preserve topology, caution is needed as simplification can affect geographic calculations.</p>
+<p>Checking the validity of each geometry (validity_check = TRUE) during import generates an output list indicating any invalid geometries and the reason(s) for invalidity. Additional information can be found in:</p>
+<p><a href="https://geocompr.robinlovelace.net/geometric-operations.html" class="uri">https://geocompr.robinlovelace.net/geometric-operations.html</a></p>
+<p>In principle, invalid geometries can be corrected using the <code>st_make_valid</code> function from the sf package. For more information, see</p>
+<p><a href="https://r-spatial.github.io/sf/reference/valid.html" class="uri">https://r-spatial.github.io/sf/reference/valid.html</a></p>
+<p>Importation of csv files makes use of the <code>read_csv()</code> function from the <strong>readr</strong> package, including standard default options.</p>
+</div>
+<div id="geo_plot" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> <code>geo_plot()</code></h2>
+<p>This function creates static or interactive maps from geospatial and attribute data.</p>
+<p>Choropleth mapping makes use of the functionality from the <strong>tmap</strong> package. Point- and heat-maps make use of the mapping functionality from the <strong>ggplot2</strong> package.</p>
+<p>Note that for point-maps and heat-maps, the coordinate reference system (CRS) for the attribute data is automatically transformed to match that of input geographic data. If CRS is missing for the attribute data, it is assumed to be WGS84.</p>
+<p>For choropleth maps, user-defined output styles (e.g. colour palettes) can be created following the examples shown in <code>tmap_options()</code> (see ?tmap::tmap_options). For illustrative purpose, a selection of styles are included based on the colour palettes of the <strong>wesanderson</strong> R package (zissou, royal, darjeeling, and fantasticfox). If the style= option is omitted from <code>geo_plot()</code>, the output plot will use the default style for the particular plot_type.</p>
+</div>
+<div id="geo_distance" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> <code>geo_distance()</code></h2>
+<p>This function calculates and maps proximity metrics based on known point locations and geographic units.</p>
+<p>Proximity may be measured in a variety of ways. The methodology used in the <code>geo_distance()</code> function examines proximity relative to user-specified point locations. Given input data on a set of geographic units (e.g., census regions, health regions, etc.) and the point locations of places or events of interest, the function calculates the centroid of each geographic unit and the pairwise distances to all point locations of interest. Proximity for each geographic unit is then calculated as the average distance to the n nearest locations.</p>
+<p>The coordinate reference system (CRS) for the point location data is automatically transformed to match that of the input geographic data. If CRS is missing for the location data, it is assumed to be WGS84.</p>
+<p>The plotting of proximity metrics makes use of the functionality in the <strong>ggplot2</strong> package.</p>
+</div>
+<div id="geo_detect" class="section level2" number="3.4">
+<h2><span class="header-section-number">3.4</span> <code>geo_detect()</code></h2>
+<p>This function helps to identify regions that form an unusual spatial aggregation of events.</p>
+<p>Public health data are often available by administrative regions, for example health regions, census geographies, postal code areas, etc. The <code>geo_detect()</code> function focuses on detection of clusters in data organized and aggregated into such administrative regions. The function makes use of event counts and corresponding population sizes provided by the user, for calculation of rates (events/population), and compares the observed value for a region against the expected value (as calculated, or as provided by the user) to determine significant clusters.</p>
+<p>The Kulldorff cluster detection method is used, which creates groupings of regions by consecutively aggregating nearest-neighbour areas until a set proportion of the total population is reached. The number of cases or events in the aggregation is used to calculate the likelihood based on either a binomial or poisson model. The final output of this method is the group of neighbouring regions that is the <em>most likely cluster</em>, and any secondary clusters, with a significance measure based on Monte Carlo sampling.</p>
+<p>The Kulldoff method can use either a binomial model (does not use expected counts) or a Poisson model (uses expected event counts provided by the user or calculated automatically). Both methods require i) geometry data (coordinates of each region’s centroid), ii) the observed event counts by region, and iii) the population size to use for each region.</p>
+<p>Note that population sizes that are very small (or zero), or very rare events, can result in a calculation error that halts the cluster detection algorithm. In these cases, users may wish to utilize the Poisson model, which is less sensitive to small counts. Alternatively, users can replace small population sizes with slightly larger values in order to allow the calculations to proceed. However, care should be taken that replacing small population sizes does not result in biased or erroneous results.</p>
+<p>For both binomial and Poisson methods, the <code>geo_detect()</code> function specifies that a cluster can contain up to a maximum of 10% of the population size. Monte Carlo samples (N = 999) are generated for calculation of p-values and an alpha level of 0.05 is used for determining statistical significance. The output reports the single most likely cluster based on the calculated significance values, and any secondary clusters meeting the specified significance threshold. If a map output is requested, the primary and top two secondary clusters are plotted.</p>
+<p>Further information on the Kulldorff cluster detection method used here can be found in the documentation for the <strong>SpatialEpi</strong> package at <a href="http://faculty.washington.edu/jonno/SISMIDmaterial/SpatialEpiVignette.pdf" class="uri">http://faculty.washington.edu/jonno/SISMIDmaterial/SpatialEpiVignette.pdf</a></p>
+<p>It is important to recognize that statistical clusters of events may or may not be relevant to public health – the definition of a cluster must be determined on a case by case basis. Also, note that statistical considerations, including corrections for multiple comparisons, need to be examined carefully when performing cluster detection.</p>
+<p>When interpreting the output of this function, it is important to consider the standard cautions and limitations of cluster detection, including ecologic fallacy, modifiable areal unit problem (MAUP), and the trade-off between resolution and sample size.</p>
+</div>
+<div id="geo_calculate" class="section level2" number="3.5">
+<h2><span class="header-section-number">3.5</span> <code>geo_calculate()</code></h2>
+<p>This function helps to measure if and how much events are aggregated in space across an area of interest. Two measures of spatial autocorrelation are used:</p>
+<ul>
+<li><p>global spatial autocorrelation - a measure of <em>clustering</em> used to describe spatial patterns of events across an entire study area</p></li>
+<li><p>local spatial autocorrelation – a measure for <em>detection of clusters</em> that indicates each region’s similarity (in event frequency) to its neighbouring regions</p></li>
+</ul>
+<div id="global-spatial-autocorrelation" class="section level3" number="3.5.1">
+<h3><span class="header-section-number">3.5.1</span> global spatial autocorrelation</h3>
+<p>The calculation of global spatial autocorrelation is the cross-product of two matrices: i) values of similarity (in event counts) between each pair of regions; and ii) values indicating proximity (distance, neighbouring, etc.) between each pair of regions. High cross-product values (similar regions are close together) indicate <em>positive spatial autocorrelation</em> and small values (dissimilar regions are close together) indicate <em>negative spatial autocorrelation</em>.</p>
+<p><img src="spatial_autocorrelation_figure.png" style="width:80.0%" /></p>
+<p>The <code>geo_calculate</code> function uses a standard measure of global spatial autocorrelation, Moran’s I, which is a spatially weighted version of the standard Pearson’s correlation coefficient. See the <code>moran.mc()</code> function from the <strong>spdep</strong> package for further details.</p>
+<p><img src="Morans_I_formula.png" style="width:50.0%" /></p>
+<p>Moran’s I values may be negative or positive, indicating negative or positive spatial autocorrelation, respectively. This function defines spatial neighbours using the <code>poly2nb()</code> function from the <strong>spdep</strong> package and rook adjacency rules. Further, it is specified that neighbour weights must sum to 1.0 for each geographic region (style = “W”) and that regions with no neighbours are ignored.</p>
+<p>Visualization of the global autocorrelation statistic can be done in the <code>geo_calculate()</code> function by generating a Moran’s I scatterplot (plot = TRUE).</p>
+</div>
+<div id="local-spatial-autocorrelation" class="section level3" number="3.5.2">
+<h3><span class="header-section-number">3.5.2</span> local spatial autocorrelation</h3>
+<p>Note that global autocorrelation does not detect clusters <em>per se</em>, so <code>geo_calculate()</code> also utilizes a local measure of spatial autocorrelation to assist with finding aggregations of events and mapping of ‘hotspots’ and ‘coldspots.’</p>
+<p>As with global spatial autocorrelation, calculation of local autocorrelation uses similarity between a region and its neighbours, weighted by proximity of those neighbours. Generically, this may be expressed as:</p>
+<p><img src="similarity_formula.png" style="width:20.0%" /></p>
+<p>The <code>geo_calculate()</code> function uses a standard measure of location spatial autocorrelation, the local Getis-Ord <em>Gi</em> statistic.</p>
+<p><img src="local_Getis_Ord_Gi_formula.png" style="width:40.0%" /></p>
+<p>In the calculation of this statistic, the function uses the same approach for determining neighbouring regions and the spatial weights matrix as describe above for global spatial autocorrelation.</p>
+<p>Visualization of hot- and cold-spots based on the local Getis-Ord statistic can be done by generating a map in the <code>geo_calculate</code> function. The distribution of the calculated <em>Gi</em> values is used to define breaks points according to standard z-scores for levels of significance (99%, 95%, 90% CIs). These breakpoints are then mapped as hot- or cold-spots at the appropriate significance level.</p>
+<p>It should be noted that that there are a number of challenges in determining statistical significance for local measures of spatial autocorrelation, including appropriate test distributions and problems associated with multiple (regional) testing. Further discussion of these issues can be found in Waller and Gotway, 2004 (Chapter 7).</p>
+</div>
+</div>
+<div id="geo_export" class="section level2" number="3.6">
+<h2><span class="header-section-number">3.6</span> <code>geo_export()</code></h2>
+<p>This function exports spatial and attribute data to file. The output file type can be a shapefile (.shp), comma separated value file (.csv), Excel workbook (.xlsx), or a SAS data file (.sas7bdat).</p>
+<p>Exporting to a shapefile makes use of the functionality in the <strong>sf</strong> package. Exporting to a csv file makes use of the functionality in the <strong>readr</strong> package. Exporting to a SAS file makes use of the functionality in the <strong>haven</strong> package. Exporting to EXCEL makes use of the functionality in the <strong>xlsx</strong> package. Further details can be found in the documentation for these packages (see <a href="https://cran.r-project.org/web/packages/available_packages_by_name.html" class="uri">https://cran.r-project.org/web/packages/available_packages_by_name.html</a>).</p>
+<p>Generic missing values (i.e., empty cells: "" and cells with a single empty space: " ") and properly coded missing values (<em>NA</em>) are by default converted to the character string ‘NA’ in the output dataset. Alternatively, a user-specified character string can be used instead of ‘NA’ in the output dataset (using the <code>na =</code> option).</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="usage.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="examples.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["users_manual.pdf", "users_manual.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

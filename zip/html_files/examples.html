@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Examples | GEODE USER’S MANUAL</title>
+  <meta name="description" content="Chapter 4 Examples | GEODE USER’S MANUAL" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Examples | GEODE USER’S MANUAL" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Examples | GEODE USER’S MANUAL" />
+  
+  
+  
+
+
+
+<meta name="date" content="2021-03-31" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="details.html"/>
+<link rel="next" href="help.html"/>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Sections</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="background.html"><a href="background.html"><i class="fa fa-check"></i><b>1</b> Background</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="background.html"><a href="background.html#purpose"><i class="fa fa-check"></i><b>1.1</b> Purpose</a></li>
+<li class="chapter" data-level="1.2" data-path="background.html"><a href="background.html#system-requirements"><i class="fa fa-check"></i><b>1.2</b> System requirements</a></li>
+<li class="chapter" data-level="1.3" data-path="background.html"><a href="background.html#downloading-and-installing"><i class="fa fa-check"></i><b>1.3</b> Downloading and installing</a></li>
+<li class="chapter" data-level="1.4" data-path="background.html"><a href="background.html#help-files"><i class="fa fa-check"></i><b>1.4</b> Help files</a></li>
+<li class="chapter" data-level="1.5" data-path="background.html"><a href="background.html#boundary-files-and-sample-data-sets"><i class="fa fa-check"></i><b>1.5</b> Boundary files and sample data sets</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="usage.html"><a href="usage.html"><i class="fa fa-check"></i><b>2</b> Using geode</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="usage.html"><a href="usage.html#structure-of-the-tool"><i class="fa fa-check"></i><b>2.1</b> Structure of the tool</a></li>
+<li class="chapter" data-level="2.2" data-path="usage.html"><a href="usage.html#getting-started"><i class="fa fa-check"></i><b>2.2</b> Getting started</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="usage.html"><a href="usage.html#setup"><i class="fa fa-check"></i><b>2.2.1</b> Setup</a></li>
+<li class="chapter" data-level="2.2.2" data-path="usage.html"><a href="usage.html#importing-data-with-geo_import"><i class="fa fa-check"></i><b>2.2.2</b> Importing data with <code>geo_import()</code></a></li>
+<li class="chapter" data-level="2.2.3" data-path="usage.html"><a href="usage.html#creating-maps-with-geo_plot"><i class="fa fa-check"></i><b>2.2.3</b> Creating maps with <code>geo_plot()</code></a></li>
+<li class="chapter" data-level="2.2.4" data-path="usage.html"><a href="usage.html#generating-spatial-statistics-with-geo_calculate"><i class="fa fa-check"></i><b>2.2.4</b> Generating spatial statistics with <code>geo_calculate()</code></a></li>
+<li class="chapter" data-level="2.2.5" data-path="usage.html"><a href="usage.html#additional-information-on-exporting-output"><i class="fa fa-check"></i><b>2.2.5</b> Additional information on exporting output</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="details.html"><a href="details.html"><i class="fa fa-check"></i><b>3</b> Technical details</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="details.html"><a href="details.html#geo_import"><i class="fa fa-check"></i><b>3.1</b> <code>geo_import()</code></a></li>
+<li class="chapter" data-level="3.2" data-path="details.html"><a href="details.html#geo_plot"><i class="fa fa-check"></i><b>3.2</b> <code>geo_plot()</code></a></li>
+<li class="chapter" data-level="3.3" data-path="details.html"><a href="details.html#geo_distance"><i class="fa fa-check"></i><b>3.3</b> <code>geo_distance()</code></a></li>
+<li class="chapter" data-level="3.4" data-path="details.html"><a href="details.html#geo_detect"><i class="fa fa-check"></i><b>3.4</b> <code>geo_detect()</code></a></li>
+<li class="chapter" data-level="3.5" data-path="details.html"><a href="details.html#geo_calculate"><i class="fa fa-check"></i><b>3.5</b> <code>geo_calculate()</code></a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="details.html"><a href="details.html#global-spatial-autocorrelation"><i class="fa fa-check"></i><b>3.5.1</b> global spatial autocorrelation</a></li>
+<li class="chapter" data-level="3.5.2" data-path="details.html"><a href="details.html#local-spatial-autocorrelation"><i class="fa fa-check"></i><b>3.5.2</b> local spatial autocorrelation</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="details.html"><a href="details.html#geo_export"><i class="fa fa-check"></i><b>3.6</b> <code>geo_export()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="examples.html"><a href="examples.html"><i class="fa fa-check"></i><b>4</b> Examples</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="examples.html"><a href="examples.html#example-1-importing-and-wrangling-data"><i class="fa fa-check"></i><b>4.1</b> Example 1: Importing and wrangling data</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="examples.html"><a href="examples.html#background-1"><i class="fa fa-check"></i><b>4.1.1</b> Background</a></li>
+<li class="chapter" data-level="4.1.2" data-path="examples.html"><a href="examples.html#setup-1"><i class="fa fa-check"></i><b>4.1.2</b> Setup</a></li>
+<li class="chapter" data-level="4.1.3" data-path="examples.html"><a href="examples.html#data-importation"><i class="fa fa-check"></i><b>4.1.3</b> Data importation</a></li>
+<li class="chapter" data-level="4.1.4" data-path="examples.html"><a href="examples.html#data-wrangling"><i class="fa fa-check"></i><b>4.1.4</b> Data wrangling</a></li>
+<li class="chapter" data-level="4.1.5" data-path="examples.html"><a href="examples.html#data-export"><i class="fa fa-check"></i><b>4.1.5</b> Data export</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="examples.html"><a href="examples.html#example-2-mapping-and-proximity-analysis"><i class="fa fa-check"></i><b>4.2</b> Example 2: mapping and proximity analysis</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="examples.html"><a href="examples.html#background-2"><i class="fa fa-check"></i><b>4.2.1</b> Background</a></li>
+<li class="chapter" data-level="4.2.2" data-path="examples.html"><a href="examples.html#setup-2"><i class="fa fa-check"></i><b>4.2.2</b> Setup</a></li>
+<li class="chapter" data-level="4.2.3" data-path="examples.html"><a href="examples.html#importing-data"><i class="fa fa-check"></i><b>4.2.3</b> Importing data</a></li>
+<li class="chapter" data-level="4.2.4" data-path="examples.html"><a href="examples.html#creating-maps"><i class="fa fa-check"></i><b>4.2.4</b> Creating maps</a></li>
+<li class="chapter" data-level="4.2.5" data-path="examples.html"><a href="examples.html#running-a-proximity-analysis"><i class="fa fa-check"></i><b>4.2.5</b> Running a proximity analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="examples.html"><a href="examples.html#example-3-cluster-detection"><i class="fa fa-check"></i><b>4.3</b> Example 3: Cluster detection</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="examples.html"><a href="examples.html#background-3"><i class="fa fa-check"></i><b>4.3.1</b> Background</a></li>
+<li class="chapter" data-level="4.3.2" data-path="examples.html"><a href="examples.html#setup-3"><i class="fa fa-check"></i><b>4.3.2</b> Setup</a></li>
+<li class="chapter" data-level="4.3.3" data-path="examples.html"><a href="examples.html#importing-data-1"><i class="fa fa-check"></i><b>4.3.3</b> Importing data</a></li>
+<li class="chapter" data-level="4.3.4" data-path="examples.html"><a href="examples.html#simulating-health-event-data"><i class="fa fa-check"></i><b>4.3.4</b> Simulating health event data</a></li>
+<li class="chapter" data-level="4.3.5" data-path="examples.html"><a href="examples.html#detecting-clusters"><i class="fa fa-check"></i><b>4.3.5</b> Detecting clusters</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="help.html"><a href="help.html"><i class="fa fa-check"></i><b>5</b> Help files</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="help.html"><a href="help.html#geo_import-1"><i class="fa fa-check"></i><b>5.1</b> <code>geo_import()</code></a></li>
+<li class="chapter" data-level="5.2" data-path="help.html"><a href="help.html#geo_plot-1"><i class="fa fa-check"></i><b>5.2</b> <code>geo_plot()</code></a></li>
+<li class="chapter" data-level="5.3" data-path="help.html"><a href="help.html#geo_distance-1"><i class="fa fa-check"></i><b>5.3</b> <code>geo_distance()</code></a></li>
+<li class="chapter" data-level="5.4" data-path="help.html"><a href="help.html#geo_detect-1"><i class="fa fa-check"></i><b>5.4</b> <code>geo_detect()</code></a></li>
+<li class="chapter" data-level="5.5" data-path="help.html"><a href="help.html#geo_calculate-1"><i class="fa fa-check"></i><b>5.5</b> <code>geo_calculate()</code></a></li>
+<li class="chapter" data-level="5.6" data-path="help.html"><a href="help.html#geo_export-1"><i class="fa fa-check"></i><b>5.6</b> <code>geo_export()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="refs.html"><a href="refs.html"><i class="fa fa-check"></i><b>6</b> References</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="refs.html"><a href="refs.html#key-references"><i class="fa fa-check"></i><b>6.1</b> Key references</a></li>
+<li class="chapter" data-level="6.2" data-path="refs.html"><a href="refs.html#additional-resources"><i class="fa fa-check"></i><b>6.2</b> Additional resources</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="refs.html"><a href="refs.html#books"><i class="fa fa-check"></i><b>6.2.1</b> Books</a></li>
+<li class="chapter" data-level="6.2.2" data-path="refs.html"><a href="refs.html#papers"><i class="fa fa-check"></i><b>6.2.2</b> Papers</a></li>
+<li class="chapter" data-level="6.2.3" data-path="refs.html"><a href="refs.html#websites-and-online-courses"><i class="fa fa-check"></i><b>6.2.3</b> Websites and online courses</a></li>
+<li class="chapter" data-level="6.2.4" data-path="refs.html"><a href="refs.html#tutorials-and-examples"><i class="fa fa-check"></i><b>6.2.4</b> Tutorials and examples</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Created with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">GEODE USER’S MANUAL</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="examples" class="section level1" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Examples</h1>
+<p>Here, several worked examples of <strong>geode</strong> are provided to illustrate typical usage. Each example is structured as a common workflow, with setup, importation of data, plotting and analysis. The R code shown in the boxes can be copied directly to your RStudio session if you wish to run these examples yourself.</p>
+<div id="example-1-importing-and-wrangling-data" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Example 1: Importing and wrangling data</h2>
+<div id="background-1" class="section level3" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Background</h3>
+<p>This example illustrates basic usage of the <strong>geode</strong> package, focusing on the importation and manipulation of data. We import geographic and attribute data using freely available Statistics Canada 2016 Census data. These data are then ‘wrangled’ as needed and joined together. Finally, basic plots are generated.</p>
+<p>Note that each function in the <strong>geode</strong> package has an associated help file. A help file can be accessed simply by including a ‘?’ before the name of the function of interest.</p>
+<p>For example, we can access the help file for the <code>geo_import()</code> function using:</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="examples.html#cb37-1" aria-hidden="true" tabindex="-1"></a>?geo_import</span></code></pre></div>
+<p>Each help file provides a simple introduction to the function and describes the necessary syntax for using that function.</p>
+<p>The data files used in this example come from the Statistics Canada 2016 Census. These files are freely available online and can be directly downloaded (and unzipped) in R as shown below. Make sure to update the ‘download_folder’ path shown below to an appropriate location on your computer.</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="examples.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># specify location and filename for input shapefile data</span></span>
+<span id="cb38-2"><a href="examples.html#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="co">#   Statistics Canada 2016 Census Dissemination Block boundaries</span></span>
+<span id="cb38-3"><a href="examples.html#cb38-3" aria-hidden="true" tabindex="-1"></a>stcn_url <span class="ot">&lt;-</span> <span class="st">&quot;http://www12.statcan.gc.ca/census-recensement/2011/geo/bound-limit/files-fichiers/2016&quot;</span></span>
+<span id="cb38-4"><a href="examples.html#cb38-4" aria-hidden="true" tabindex="-1"></a>infile_zip <span class="ot">&lt;-</span> <span class="st">&quot;ldb_000b16a_e.zip&quot;</span></span>
+<span id="cb38-5"><a href="examples.html#cb38-5" aria-hidden="true" tabindex="-1"></a>download_folder <span class="ot">&lt;-</span> <span class="st">&quot;C:/Users/Michael/Documents/R/data&quot;</span></span>
+<span id="cb38-6"><a href="examples.html#cb38-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-7"><a href="examples.html#cb38-7" aria-hidden="true" tabindex="-1"></a><span class="co"># specify location for input attribute data</span></span>
+<span id="cb38-8"><a href="examples.html#cb38-8" aria-hidden="true" tabindex="-1"></a><span class="co">#   Statistics Canada 2016 Census Geographic Attribute file</span></span>
+<span id="cb38-9"><a href="examples.html#cb38-9" aria-hidden="true" tabindex="-1"></a>stcn_url_attr <span class="ot">&lt;-</span> <span class="st">&quot;http://www12.statcan.gc.ca/census-recensement/2016/geo/ref/gaf/files-fichiers&quot;</span></span>
+<span id="cb38-10"><a href="examples.html#cb38-10" aria-hidden="true" tabindex="-1"></a>infile_attr_zip <span class="ot">&lt;-</span> <span class="st">&quot;2016_92-151_XBB_csv.zip&quot;</span></span></code></pre></div>
+<p>These files only need to be downloaded and unzipped once.</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="examples.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># download and unzip the input data</span></span>
+<span id="cb39-2"><a href="examples.html#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(<span class="at">url =</span> <span class="fu">paste</span>(stcn_url, infile_zip, <span class="at">sep =</span> <span class="st">&quot;/&quot;</span>),</span>
+<span id="cb39-3"><a href="examples.html#cb39-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">destfile =</span> <span class="fu">paste</span>(download_folder, infile_zip, <span class="at">sep =</span> <span class="st">&quot;/&quot;</span>))</span>
+<span id="cb39-4"><a href="examples.html#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span>(<span class="at">zipfile =</span> <span class="fu">paste</span>(download_folder, infile_zip, <span class="at">sep =</span> <span class="st">&quot;/&quot;</span>),</span>
+<span id="cb39-5"><a href="examples.html#cb39-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">exdir =</span> download_folder)</span>
+<span id="cb39-6"><a href="examples.html#cb39-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-7"><a href="examples.html#cb39-7" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(<span class="at">url =</span> <span class="fu">paste</span>(stcn_url_attr, infile_attr_zip, <span class="at">sep =</span> <span class="st">&quot;/&quot;</span>),</span>
+<span id="cb39-8"><a href="examples.html#cb39-8" aria-hidden="true" tabindex="-1"></a>              <span class="at">destfile =</span> <span class="fu">paste</span>(download_folder, infile_attr_zip, <span class="at">sep =</span> <span class="st">&quot;/&quot;</span>))</span>
+<span id="cb39-9"><a href="examples.html#cb39-9" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span>(<span class="at">zipfile =</span> <span class="fu">paste</span>(download_folder, infile_attr_zip, <span class="at">sep =</span> <span class="st">&quot;/&quot;</span>),</span>
+<span id="cb39-10"><a href="examples.html#cb39-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">exdir =</span> download_folder)</span></code></pre></div>
+</div>
+<div id="setup-1" class="section level3" number="4.1.2">
+<h3><span class="header-section-number">4.1.2</span> Setup</h3>
+<p>Load the <strong>geode</strong> package. This makes all <strong>geode</strong> functions available for use in your current R session.</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="examples.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(geode)</span></code></pre></div>
+<p>Before importing data, we must specify the names and locations of the shapefiles or attribute files we wish to import. It is convenient to define these as R objects at the beginning of your R script (e.g., storing the input directory path in the object ‘indir’) so that they can be easily modified later. As before, you must modify the input directory path (‘indir’) shown below to match the location on your computer where these two files have been saved.</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="examples.html#cb41-1" aria-hidden="true" tabindex="-1"></a>indir <span class="ot">&lt;-</span> <span class="st">&quot;C:/Users/Michael/Documents/R/data&quot;</span></span>
+<span id="cb41-2"><a href="examples.html#cb41-2" aria-hidden="true" tabindex="-1"></a>infile_shp <span class="ot">&lt;-</span> <span class="st">&quot;ldb_000b16a_e.shp&quot;</span></span>
+<span id="cb41-3"><a href="examples.html#cb41-3" aria-hidden="true" tabindex="-1"></a>infile_attr <span class="ot">&lt;-</span> <span class="st">&quot;2016_92-151_XBB.csv&quot;</span></span></code></pre></div>
+</div>
+<div id="data-importation" class="section level3" number="4.1.3">
+<h3><span class="header-section-number">4.1.3</span> Data importation</h3>
+<p>We import a basic shape or attribute file using the <code>geo_import()</code> function and only two required arguments: <code>path</code> and <code>filetype</code>.</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="examples.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># shapefile</span></span>
+<span id="cb42-2"><a href="examples.html#cb42-2" aria-hidden="true" tabindex="-1"></a>my_shp <span class="ot">&lt;-</span> <span class="fu">geo_import</span>(<span class="at">path =</span> <span class="fu">paste</span>(indir, infile_shp, <span class="at">sep =</span> <span class="st">&quot;/&quot;</span>),</span>
+<span id="cb42-3"><a href="examples.html#cb42-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">filetype =</span> <span class="st">&quot;spatial&quot;</span>)</span>
+<span id="cb42-4"><a href="examples.html#cb42-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-5"><a href="examples.html#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="co"># attribute file</span></span>
+<span id="cb42-6"><a href="examples.html#cb42-6" aria-hidden="true" tabindex="-1"></a>my_attr <span class="ot">&lt;-</span> <span class="fu">geo_import</span>(<span class="at">path =</span> <span class="fu">paste</span>(indir, infile_attr, <span class="at">sep =</span> <span class="st">&quot;/&quot;</span>),</span>
+<span id="cb42-7"><a href="examples.html#cb42-7" aria-hidden="true" tabindex="-1"></a>                     <span class="at">filetype =</span> <span class="st">&quot;attribute&quot;</span>)</span></code></pre></div>
+<p>From the <code>geo_import()</code> help file, we see that two optional arguments are available: <code>simplify</code> and <code>validity_check</code>. These have not been specified in the code above and are therefore set automatically at their default values (i.e., do not simplify or run a validity check during import).</p>
+<p>We can now view our imported files using any of the standard approaches, for example:</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="examples.html#cb43-1" aria-hidden="true" tabindex="-1"></a>my_shp</span>
+<span id="cb43-2"><a href="examples.html#cb43-2" aria-hidden="true" tabindex="-1"></a>tibble<span class="sc">::</span><span class="fu">glimpse</span>(my_shp)</span></code></pre></div>
+<p>Shapefiles are imported as a ‘simple features’ data object. These data objects also contain key information about the geometry type, the bounding box dimensions and projected coordinate reference system (CRS). This information is shown when the shapefile is viewed in R.</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="examples.html#cb44-1" aria-hidden="true" tabindex="-1"></a>Simple feature collection with <span class="dv">489676</span> features and <span class="dv">27</span> fields</span>
+<span id="cb44-2"><a href="examples.html#cb44-2" aria-hidden="true" tabindex="-1"></a>geometry type<span class="sc">:</span>  MULTIPOLYGON</span>
+<span id="cb44-3"><a href="examples.html#cb44-3" aria-hidden="true" tabindex="-1"></a>dimension<span class="sc">:</span>      XY</span>
+<span id="cb44-4"><a href="examples.html#cb44-4" aria-hidden="true" tabindex="-1"></a>bbox<span class="sc">:</span>           xmin<span class="sc">:</span> <span class="dv">3689439</span> ymin<span class="sc">:</span> <span class="fl">659338.9</span> xmax<span class="sc">:</span> <span class="dv">9015737</span> ymax<span class="sc">:</span> <span class="dv">5242179</span></span>
+<span id="cb44-5"><a href="examples.html#cb44-5" aria-hidden="true" tabindex="-1"></a>projected CRS<span class="sc">:</span>  PCS_Lambert_Conformal_Conic</span>
+<span id="cb44-6"><a href="examples.html#cb44-6" aria-hidden="true" tabindex="-1"></a>First <span class="dv">10</span> features<span class="sc">:</span></span>
+<span id="cb44-7"><a href="examples.html#cb44-7" aria-hidden="true" tabindex="-1"></a>         DBUID DBRPLAMX DBRPLAMY PRUID                                              PRNAME CDUID</span>
+<span id="cb44-8"><a href="examples.html#cb44-8" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>  <span class="dv">10010202002</span>  <span class="dv">8979444</span>  <span class="dv">2148775</span>    <span class="dv">10</span> Newfoundland and Labrador <span class="sc">/</span> Terre<span class="sc">-</span>Neuve<span class="sc">-</span>et<span class="sc">-</span>Labrador  <span class="dv">1001</span></span>
+<span id="cb44-9"><a href="examples.html#cb44-9" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span>  <span class="dv">10010203001</span>  <span class="dv">8979186</span>  <span class="dv">2149065</span>    <span class="dv">10</span> Newfoundland and Labrador <span class="sc">/</span> Terre<span class="sc">-</span>Neuve<span class="sc">-</span>et<span class="sc">-</span>Labrador  <span class="dv">1001</span></span>
+<span id="cb44-10"><a href="examples.html#cb44-10" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span>  <span class="dv">10010204001</span>  <span class="dv">8979382</span>  <span class="dv">2148616</span>    <span class="dv">10</span> Newfoundland and Labrador <span class="sc">/</span> Terre<span class="sc">-</span>Neuve<span class="sc">-</span>et<span class="sc">-</span>Labrador  <span class="dv">1001</span></span>
+<span id="cb44-11"><a href="examples.html#cb44-11" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span>  <span class="dv">10010204002</span>  <span class="dv">8979490</span>  <span class="dv">2148537</span>    <span class="dv">10</span> Newfoundland and Labrador <span class="sc">/</span> Terre<span class="sc">-</span>Neuve<span class="sc">-</span>et<span class="sc">-</span>Labrador  <span class="dv">1001</span></span>
+<span id="cb44-12"><a href="examples.html#cb44-12" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span>  <span class="dv">10010204004</span>  <span class="dv">8979255</span>  <span class="dv">2148525</span>    <span class="dv">10</span> Newfoundland and Labrador <span class="sc">/</span> Terre<span class="sc">-</span>Neuve<span class="sc">-</span>et<span class="sc">-</span>Labrador  <span class="dv">1001</span></span>
+<span id="cb44-13"><a href="examples.html#cb44-13" aria-hidden="true" tabindex="-1"></a><span class="dv">6</span>  <span class="dv">10010204005</span>  <span class="dv">8979610</span>  <span class="dv">2148480</span>    <span class="dv">10</span> Newfoundland and Labrador <span class="sc">/</span> Terre<span class="sc">-</span>Neuve<span class="sc">-</span>et<span class="sc">-</span>Labrador  <span class="dv">1001</span></span>
+<span id="cb44-14"><a href="examples.html#cb44-14" aria-hidden="true" tabindex="-1"></a><span class="dv">7</span>  <span class="dv">10010206001</span>  <span class="dv">8978939</span>  <span class="dv">2149068</span>    <span class="dv">10</span> Newfoundland and Labrador <span class="sc">/</span> Terre<span class="sc">-</span>Neuve<span class="sc">-</span>et<span class="sc">-</span>Labrador  <span class="dv">1001</span></span>
+<span id="cb44-15"><a href="examples.html#cb44-15" aria-hidden="true" tabindex="-1"></a><span class="dv">8</span>  <span class="dv">10010206003</span>  <span class="dv">8978866</span>  <span class="dv">2148511</span>    <span class="dv">10</span> Newfoundland and Labrador <span class="sc">/</span> Terre<span class="sc">-</span>Neuve<span class="sc">-</span>et<span class="sc">-</span>Labrador  <span class="dv">1001</span></span>
+<span id="cb44-16"><a href="examples.html#cb44-16" aria-hidden="true" tabindex="-1"></a><span class="dv">9</span>  <span class="dv">10010206004</span>  <span class="dv">8978899</span>  <span class="dv">2148301</span>    <span class="dv">10</span> Newfoundland and Labrador <span class="sc">/</span> Terre<span class="sc">-</span>Neuve<span class="sc">-</span>et<span class="sc">-</span>Labrador  <span class="dv">1001</span></span>
+<span id="cb44-17"><a href="examples.html#cb44-17" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span> <span class="dv">10010206012</span>  <span class="dv">8978496</span>  <span class="dv">2148545</span>    <span class="dv">10</span> Newfoundland and Labrador <span class="sc">/</span> Terre<span class="sc">-</span>Neuve<span class="sc">-</span>et<span class="sc">-</span>Labrador  <span class="dv">1001</span></span></code></pre></div>
+<p>Note that imported shapefiles should always contain a ‘geometry’ column that specifies the vertices of the geographic boundaries. Attribute files can contain any information associated with the geographies in the shapefile (e.g., income, population size, etc.).</p>
+<p>An overview of functions for manipulating simple features data in R can be found in the cheat sheet for the <code>sf</code> package:</p>
+<p><a href="https://github.com/rstudio/cheatsheets/raw/master/sf.pdf" class="uri">https://github.com/rstudio/cheatsheets/raw/master/sf.pdf</a></p>
+<p>We may wish to know the size (memory usage) of the imported file, particularly because shapefiles may be very large and difficult to manage. We can get file size using the R function <code>object.size()</code>.</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="examples.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">object.size</span>(my_shp)</span>
+<span id="cb45-2"><a href="examples.html#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="fu">object.size</span>(my_attr)</span></code></pre></div>
+<div id="simplifying-a-shapefile-during-importation" class="section level4" number="4.1.3.1">
+<h4><span class="header-section-number">4.1.3.1</span> Simplifying a shapefile during importation</h4>
+<p>We can reduce the size and memory usage of a shapefile by specifying the <code>simplify</code> option in <code>geo_import</code>. This may be helpful for generating a more manageable and efficient working file. However,it should be noted that simplification (which removes vertices from the geographic boundaries) may affect spatial calculations so should be used with care.</p>
+<p>Also, note that importing and simplifying takes about 3x longer than importing alone.</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="examples.html#cb46-1" aria-hidden="true" tabindex="-1"></a>my_shp_simple <span class="ot">&lt;-</span> <span class="fu">geo_import</span>(<span class="at">path =</span> <span class="fu">paste</span>(indir, infile_shp, <span class="at">sep =</span> <span class="st">&quot;/&quot;</span>),</span>
+<span id="cb46-2"><a href="examples.html#cb46-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">filetype =</span> <span class="st">&quot;spatial&quot;</span>,</span>
+<span id="cb46-3"><a href="examples.html#cb46-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">simplify =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<p>Simplifying a shapefile usually reduces the object size by at least half, but often more.</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="examples.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># what is the size of the simplified shapefile?</span></span>
+<span id="cb47-2"><a href="examples.html#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">object.size</span>(my_shp_simple)</span></code></pre></div>
+</div>
+</div>
+<div id="data-wrangling" class="section level3" number="4.1.4">
+<h3><span class="header-section-number">4.1.4</span> Data wrangling</h3>
+<p>Once a file has been imported, it can be cleaned, subsetted, transposed, etc. as needed and linked to other data. For most data wrangling, we use functions from the <strong>tidyverse</strong> package.</p>
+<p>Further details on data wrangling functions can be found at the tidyverse website (<a href="https://www.tidyverse.org/" class="uri">https://www.tidyverse.org/</a>) and in the cheat-sheets for data wrangling and data transformation:</p>
+<p><a href="https://rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf" class="uri">https://rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf</a><br />
+<a href="https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf" class="uri">https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf</a></p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="examples.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># if you have not already done so, first download and install the tidyverse package</span></span>
+<span id="cb48-2"><a href="examples.html#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span>
+<span id="cb48-3"><a href="examples.html#cb48-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-4"><a href="examples.html#cb48-4" aria-hidden="true" tabindex="-1"></a><span class="co"># now, load the package so that the functions are available for use in your R session</span></span>
+<span id="cb48-5"><a href="examples.html#cb48-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<p>We might start, for example, by subsetting the shapefile to only one province (e.g., Ontario) and keeping only certain selected variables.</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="examples.html#cb49-1" aria-hidden="true" tabindex="-1"></a>my_shp_on <span class="ot">&lt;-</span> my_shp <span class="sc">%&gt;%</span> </span>
+<span id="cb49-2"><a href="examples.html#cb49-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(PRNAME <span class="sc">==</span> <span class="st">&#39;Ontario&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb49-3"><a href="examples.html#cb49-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(PRNAME, DBUID, ERNAME, FEDNAME, CMANAME, geometry) <span class="sc">%&gt;%</span></span>
+<span id="cb49-4"><a href="examples.html#cb49-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">DBUID =</span> <span class="fu">as.numeric</span>(DBUID)) <span class="co"># reformat variable DBUID as numeric</span></span>
+<span id="cb49-5"><a href="examples.html#cb49-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-6"><a href="examples.html#cb49-6" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(my_shp_on)</span></code></pre></div>
+<p>Note that the dissemination block ID variable ‘DBUID’ was originally formatted as a character variable, but we have reformatted it above to be numeric. Later, we will join the geographic and attribute data using this variable as a linkage key, so it is helpful if it has a consistent (numeric) format.</p>
+<p>We then may wish to wrangle our attribute data. For example, we might subset the attribute file to the matching province used in our shapefile and then select certain key variables. In the ‘select’ function we also rename these variables to be more user-friendly and/or to match the variable names in our shapefile.</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="examples.html#cb50-1" aria-hidden="true" tabindex="-1"></a>my_attr_on <span class="ot">&lt;-</span> my_attr <span class="sc">%&gt;%</span></span>
+<span id="cb50-2"><a href="examples.html#cb50-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="st">`</span><span class="at">PRname/PRnom</span><span class="st">`</span> <span class="sc">==</span> <span class="st">&#39;Ontario&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb50-3"><a href="examples.html#cb50-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="at">DBUID =</span> <span class="st">`</span><span class="at">DBuid/IDidu</span><span class="st">`</span>, </span>
+<span id="cb50-4"><a href="examples.html#cb50-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">DBpop =</span> <span class="st">`</span><span class="at">DBpop2016/IDpop2016</span><span class="st">`</span>, </span>
+<span id="cb50-5"><a href="examples.html#cb50-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">DBtdwellings =</span> <span class="st">`</span><span class="at">DBtdwell2016/IDtlog2016</span><span class="st">`</span>,</span>
+<span id="cb50-6"><a href="examples.html#cb50-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">DBudwellings =</span> <span class="st">`</span><span class="at">DBurdwell2016/IDrh2016</span><span class="st">`</span>, </span>
+<span id="cb50-7"><a href="examples.html#cb50-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">DBarea =</span> <span class="st">`</span><span class="at">DBarea2016/IDsup2016</span><span class="st">`</span>)</span></code></pre></div>
+<p>Finally, we may wish to link our geographic (shapefile) data and attribute data by joining on a common variable. In this case, we join based on the Dissemination Block ID</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="examples.html#cb51-1" aria-hidden="true" tabindex="-1"></a>my_data_on <span class="ot">&lt;-</span> my_shp_on <span class="sc">%&gt;%</span></span>
+<span id="cb51-2"><a href="examples.html#cb51-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(my_attr_on, <span class="at">by =</span> <span class="st">&quot;DBUID&quot;</span>)</span>
+<span id="cb51-3"><a href="examples.html#cb51-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-4"><a href="examples.html#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(my_data_on)</span></code></pre></div>
+<p><br></p>
+<p>Now that we have linked geographic boundary and attribute data, population size, dwelling counts and other metrics are available for each region. We can generate a quick map of population size, for example, using <code>geo_plot()</code>. We first subset the data to include only the Guelph region.</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="examples.html#cb52-1" aria-hidden="true" tabindex="-1"></a>my_data_guelph <span class="ot">&lt;-</span> my_data_on <span class="sc">%&gt;%</span></span>
+<span id="cb52-2"><a href="examples.html#cb52-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(CMANAME <span class="sc">==</span> <span class="st">&#39;Guelph&#39;</span>)</span>
+<span id="cb52-3"><a href="examples.html#cb52-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-4"><a href="examples.html#cb52-4" aria-hidden="true" tabindex="-1"></a><span class="fu">geo_plot</span>(<span class="at">data =</span> my_data_guelph,</span>
+<span id="cb52-5"><a href="examples.html#cb52-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">geography_col =</span> DBpop,</span>
+<span id="cb52-6"><a href="examples.html#cb52-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">plot_type =</span> <span class="st">&#39;choropleth&#39;</span>,</span>
+<span id="cb52-7"><a href="examples.html#cb52-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">legend_title =</span> <span class="st">&quot;Population size&quot;</span>)</span></code></pre></div>
+<p>Note that data wrangling functions can be nested within <strong>geode</strong> functions, if desired. For example, we could have created the above plot simply by subsetting the Ontario data <em>within</em> the <code>geo_plot()</code> function: rather than create a separate data object for Guelph, we filter the Ontario data as we plot to include only those rows for the Guelph census metropolitan area (CMA).</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="examples.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">geo_plot</span>(<span class="at">data =</span> <span class="fu">filter</span>(my_data_on, CMANAME <span class="sc">==</span> <span class="st">&#39;Guelph&#39;</span>),</span>
+<span id="cb53-2"><a href="examples.html#cb53-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">geography_col =</span> DBpop,</span>
+<span id="cb53-3"><a href="examples.html#cb53-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">plot_type =</span> <span class="st">&#39;choropleth&#39;</span>,</span>
+<span id="cb53-4"><a href="examples.html#cb53-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">legend_title =</span> <span class="st">&quot;Population size&quot;</span>)</span></code></pre></div>
+<p>A wide variety of functions are available for wrangling data in R – an overview can be found in the <strong>tidyverse</strong> cheat sheet:</p>
+<p><a href="https://rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf" class="uri">https://rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf</a></p>
+</div>
+<div id="data-export" class="section level3" number="4.1.5">
+<h3><span class="header-section-number">4.1.5</span> Data export</h3>
+<p>Finally, we can export our new linked geodata to a file for future use. We make use of the <code>geo_export()</code> function, which allows us to output data as a shapefile, an excel workbook, or a SAS data file. Note that because our geodata contains a geometry column (which specifies the the vertices of our geographic boundaries), we must export as a shapefile.</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="examples.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># specify path and name of output file</span></span>
+<span id="cb54-2"><a href="examples.html#cb54-2" aria-hidden="true" tabindex="-1"></a>outfile <span class="ot">&lt;-</span> <span class="st">&quot;C:/Users/Michael/Documents/R/working dir/data/guelph_db&quot;</span></span>
+<span id="cb54-3"><a href="examples.html#cb54-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-4"><a href="examples.html#cb54-4" aria-hidden="true" tabindex="-1"></a><span class="co"># export as a shapefile</span></span>
+<span id="cb54-5"><a href="examples.html#cb54-5" aria-hidden="true" tabindex="-1"></a><span class="fu">geo_export</span>(my_data_guelph, </span>
+<span id="cb54-6"><a href="examples.html#cb54-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">path =</span> outfile, </span>
+<span id="cb54-7"><a href="examples.html#cb54-7" aria-hidden="true" tabindex="-1"></a>           <span class="at">filetype =</span> <span class="st">&quot;shp&quot;</span>)</span></code></pre></div>
+</div>
+</div>
+<div id="example-2-mapping-and-proximity-analysis" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Example 2: mapping and proximity analysis</h2>
+<div id="background-2" class="section level3" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> Background</h3>
+<p>This example illustrates basic usage of the <strong>geode</strong> package, focusing on creation of plots and running a proximity analysis. Here, we make use of the geographic boundary data for BC’s Community Health Service Areas (CHSA) and the point locations of BC acute care hospitals. These data files are freely available through DataBC:</p>
+<p><a href="https://catalogue.data.gov.bc.ca/dataset/community-health-service-areas-chsa" class="uri">https://catalogue.data.gov.bc.ca/dataset/community-health-service-areas-chsa</a><br />
+<a href="https://catalogue.data.gov.bc.ca/dataset/hospitals-in-bc" class="uri">https://catalogue.data.gov.bc.ca/dataset/hospitals-in-bc</a></p>
+<p>Help files for <strong>geode</strong> functions can be accessed simply by including a ‘?’ before the name of the function of interest. In this example, we focus on the functions <code>geo_plot()</code> and <code>geo_distance()</code>.</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="examples.html#cb55-1" aria-hidden="true" tabindex="-1"></a>?geode<span class="sc">::</span>geo_plot</span>
+<span id="cb55-2"><a href="examples.html#cb55-2" aria-hidden="true" tabindex="-1"></a>?geode<span class="sc">::</span>geo_distance</span></code></pre></div>
+<p><em>Note that in R, if a package has been installed but not loaded, we must specify the package name and the function name (<code>package_name::function_name</code>) in order to use that function or access its help file. Once a package has been loaded, we only need to specify the function name.</em></p>
+</div>
+<div id="setup-2" class="section level3" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> Setup</h3>
+<p>As always, we begin by loading the <strong>geode</strong> package.</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="examples.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(geode)</span></code></pre></div>
+<p>As in Example 1, we also make use of the <strong>tidyverse</strong> package for data manipulation (‘wrangling’). The <strong>geode</strong> package has been designed so that it is completely compatible with all <strong>tidyverse</strong> functions.</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="examples.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<p>We specify the locations and names of data files to be imported. Recall that you must modify the input directory path (‘indir’) shown below to match the location on your computer where the input files have been saved.</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="examples.html#cb58-1" aria-hidden="true" tabindex="-1"></a>indir <span class="ot">&lt;-</span> <span class="st">&quot;C:/Users/Michael/Documents/R/working dir/data&quot;</span></span>
+<span id="cb58-2"><a href="examples.html#cb58-2" aria-hidden="true" tabindex="-1"></a>infile_boundaries <span class="ot">&lt;-</span> <span class="fu">paste</span>(indir, <span class="st">&quot;CHSA_2018.shp&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;/&quot;</span>)</span>
+<span id="cb58-3"><a href="examples.html#cb58-3" aria-hidden="true" tabindex="-1"></a>infile_hosp <span class="ot">&lt;-</span> <span class="fu">paste</span>(indir, <span class="st">&quot;hlbc_hospitals.csv&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;/&quot;</span>)</span></code></pre></div>
+</div>
+<div id="importing-data" class="section level3" number="4.2.3">
+<h3><span class="header-section-number">4.2.3</span> Importing data</h3>
+<p>We begin by importing the geographic boundary data (BC community health service areas) using the <code>geo_import()</code> function. We may simplify the shapefile (i.e., reduce the file size by removing vertices) for the purposes of creating a smaller, more efficient, working file. However, for generating final calculations and plots it is advisable to use the unsimplified (<code>simplify = FALSE</code>) file.</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="examples.html#cb59-1" aria-hidden="true" tabindex="-1"></a>bc_geo <span class="ot">&lt;-</span> <span class="fu">geo_import</span>(<span class="at">path =</span> infile_boundaries,</span>
+<span id="cb59-2"><a href="examples.html#cb59-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">filetype =</span> <span class="st">&#39;spatial&#39;</span>,</span>
+<span id="cb59-3"><a href="examples.html#cb59-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">simplify =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<p>Next, we import the hospital location data. This originates from a generic csv file, so we specify that this is ‘attribute’ data, not ‘spatial’ data.</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="examples.html#cb60-1" aria-hidden="true" tabindex="-1"></a>bc_hosp <span class="ot">&lt;-</span> <span class="fu">geo_import</span>(<span class="at">path =</span> infile_hosp,</span>
+<span id="cb60-2"><a href="examples.html#cb60-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">filetype =</span> <span class="st">&#39;attribute&#39;</span>)</span></code></pre></div>
+<p>We may wish to do some data wrangling in order to make these input files cleaner and easier to work with. As in Example 1, we use the <strong>tidyverse</strong> function <code>select()</code> to keep only those variables needed for analysis and to rename them as appropriate for our proximity analysis. Recall, the <code>geo_distance()</code> function requires the attribute data to have an ‘id’ column, as well as point locations identified by column names ‘x’ and ‘y.’</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="examples.html#cb61-1" aria-hidden="true" tabindex="-1"></a>bc_geo <span class="ot">&lt;-</span> <span class="fu">select</span>(bc_geo, CHSA_Name, LHA_Name, HSDA_Name, HA_Name, geometry)</span>
+<span id="cb61-2"><a href="examples.html#cb61-2" aria-hidden="true" tabindex="-1"></a>bc_hosp <span class="ot">&lt;-</span> <span class="fu">select</span>(bc_hosp, <span class="at">HA_Name =</span> RG_NAME, <span class="at">id =</span> SV_NAME, <span class="at">x =</span> LONGITUDE, <span class="at">y =</span> LATITUDE)</span></code></pre></div>
+<p>Finally, we will use the <strong>tidyverse</strong> <code>filter()</code> function to create new subsets of both datasets that include only those rows corresponding to the Fraser Health region of BC. We will use these subsets later in our analysis.</p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="examples.html#cb62-1" aria-hidden="true" tabindex="-1"></a>fraser_geo <span class="ot">&lt;-</span> bc_geo <span class="sc">%&gt;%</span> <span class="fu">filter</span>(HA_Name <span class="sc">==</span> <span class="st">&#39;Fraser&#39;</span>)</span>
+<span id="cb62-2"><a href="examples.html#cb62-2" aria-hidden="true" tabindex="-1"></a>fraser_hosp <span class="ot">&lt;-</span> bc_hosp <span class="sc">%&gt;%</span> <span class="fu">filter</span>(HA_Name <span class="sc">==</span> <span class="st">&#39;Fraser Health Authority&#39;</span>)</span></code></pre></div>
+</div>
+<div id="creating-maps" class="section level3" number="4.2.4">
+<h3><span class="header-section-number">4.2.4</span> Creating maps</h3>
+<div id="choropleth-maps" class="section level4" number="4.2.4.1">
+<h4><span class="header-section-number">4.2.4.1</span> Choropleth maps</h4>
+<p>Often we wish to create quick and simple maps from our data, the most common being a static choropleth map. In <strong>geode</strong>, this requires only minimal coding using the <code>geo_plot()</code> function. We only need to specify the name of the imported data (<code>data =</code>) being mapped, the name of the data variable (<code>geography_col =</code>) identifying the geographic regions we wish to map, and the type of plot we wish to generate (in this case a <code>plot_type = 'choropleth'</code> map). The remaining arguments shown here (<code>plot_title =</code> and <code>legend_title =</code>) are optional.</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="examples.html#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">geo_plot</span>(<span class="at">data =</span> bc_geo,</span>
+<span id="cb63-2"><a href="examples.html#cb63-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">geography_col =</span> HA_Name,</span>
+<span id="cb63-3"><a href="examples.html#cb63-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">plot_type =</span> <span class="st">&#39;choropleth&#39;</span>,</span>
+<span id="cb63-4"><a href="examples.html#cb63-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">plot_title =</span> <span class="st">&#39;Health Authorities of British Columbia&#39;</span>,</span>
+<span id="cb63-5"><a href="examples.html#cb63-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">legend_title =</span> <span class="st">&#39;Health Authority&#39;</span>)</span></code></pre></div>
+<p><img src="static_choropleth.png" /></p>
+<p>Although static images are useful for publications, interactive maps can be a powerful way to explore and communicate the data. Here, we need only specify the option <code>interactive = TRUE</code>, which places our data against interactive background layers (similar to those used in Google Maps) that allow us to zoom in and out and obtain information by hovering over an area. Here we use the <code>hover_id</code> option to specify that the values shown when hovering over a region are those found in the data column ‘CHSA_Name’ (if we had excluded this option, the hover-over values would be those found in the <code>geography_col</code>, i.e., the HSDA_Name values). Note that we have also set the transparency of our data layers to be 50% (<code>transparency = 0.5</code>) so that we can see some of the background detail through our shading.</p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="examples.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">geo_plot</span>(<span class="at">data =</span> bc_geo,</span>
+<span id="cb64-2"><a href="examples.html#cb64-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">geography_col =</span> HSDA_Name,</span>
+<span id="cb64-3"><a href="examples.html#cb64-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">plot_type =</span> <span class="st">&quot;choropleth&quot;</span>,</span>
+<span id="cb64-4"><a href="examples.html#cb64-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">legend_title =</span> <span class="st">&#39;Health Service Delivery Areas&#39;</span>,</span>
+<span id="cb64-5"><a href="examples.html#cb64-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">transparency =</span> <span class="fl">0.5</span>,</span>
+<span id="cb64-6"><a href="examples.html#cb64-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">hover_id =</span> CHSA_Name,</span>
+<span id="cb64-7"><a href="examples.html#cb64-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">interactive =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<p><img src="interactive_choropleth.png" style="width:50.0%" /></p>
+</div>
+<div id="pointmaps" class="section level4" number="4.2.4.2">
+<h4><span class="header-section-number">4.2.4.2</span> Pointmaps</h4>
+<p>In oder to map point locations of interest (e.g., hospitals), we change the map type to be <code>plot_type = 'pointmap'</code> and specify the input data object containing our x-y locations using <code>attribute_data</code>.</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="examples.html#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">geo_plot</span>(<span class="at">data =</span> bc_geo,</span>
+<span id="cb65-2"><a href="examples.html#cb65-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">geography_col =</span> HA_Name,</span>
+<span id="cb65-3"><a href="examples.html#cb65-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">attribute_data =</span> bc_hosp,</span>
+<span id="cb65-4"><a href="examples.html#cb65-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">plot_type =</span> <span class="st">&#39;pointmap&#39;</span>,</span>
+<span id="cb65-5"><a href="examples.html#cb65-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">plot_title =</span> <span class="st">&#39;Locations of BC Hospitals&#39;</span>,</span>
+<span id="cb65-6"><a href="examples.html#cb65-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">legend_title =</span> <span class="st">&#39;Health Authority&#39;</span>)</span></code></pre></div>
+<p><img src="static_pointmap.png" style="width:50.0%" /></p>
+<p>We can easily look at particular areas of interest using the subsetted data we created earlier. In this example, we look only at the Health Service Delivery Areas (HSDA) of the Fraser Health Authority. Optionally, we have specified <code>legend_title = 'none</code>, which removes the legend entirely.</p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="examples.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">geo_plot</span>(<span class="at">data =</span> fraser_geo,</span>
+<span id="cb66-2"><a href="examples.html#cb66-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">geography_col =</span> HSDA_Name,</span>
+<span id="cb66-3"><a href="examples.html#cb66-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">attribute_data =</span> fraser_hosp,</span>
+<span id="cb66-4"><a href="examples.html#cb66-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">plot_type =</span> <span class="st">&#39;pointmap&#39;</span>,</span>
+<span id="cb66-5"><a href="examples.html#cb66-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">plot_title =</span> <span class="st">&#39;Locations of Hospitals in Fraser Health&#39;</span>,</span>
+<span id="cb66-6"><a href="examples.html#cb66-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">legend_title =</span> <span class="st">&#39;none&#39;</span>)</span></code></pre></div>
+<p><img src="static_pointmap_subset.png" style="width:50.0%" /></p>
+<p>Note that for illustration purposes we created a separate data object containing only the data for Fraser Health. We did this as a separate step, but could have generated the same plot simply by applying the <code>filter</code> function to the geographic and attribute data <em>within</em> the <code>geo_plot()</code> function itself.</p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="examples.html#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="fu">geo_plot</span>(<span class="at">data =</span> <span class="fu">filter</span>(bc_geo, HA_Name <span class="sc">==</span> <span class="st">&#39;Fraser&#39;</span>),</span>
+<span id="cb67-2"><a href="examples.html#cb67-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">geography_col =</span> HSDA_Name,</span>
+<span id="cb67-3"><a href="examples.html#cb67-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">plot_type =</span> <span class="st">&#39;pointmap&#39;</span>,</span>
+<span id="cb67-4"><a href="examples.html#cb67-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">attribute_data =</span> <span class="fu">filter</span>(bc_hosp, HA_Name <span class="sc">==</span> <span class="st">&#39;Fraser Health Authority&#39;</span>),</span>
+<span id="cb67-5"><a href="examples.html#cb67-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">legend_title =</span> <span class="st">&quot;HSDA&quot;</span>,</span>
+<span id="cb67-6"><a href="examples.html#cb67-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">plot_title =</span> <span class="st">&quot;Fraser Health Regions&quot;</span>)</span></code></pre></div>
+<p>All maps generated using <strong>geode</strong> can be exported as an image file or pdf for later use. As described in Chapter <a href="usage.html#usage">2</a>, the <code>png()</code>, <code>bmp()</code>, <code>jpeg()</code> or <code>tiff()</code> functions can be used to save a map image to your computer. The <code>pdf()</code> function similarly allows you to export a map as a pdf.</p>
+<p>Using the above map of Fraser Health as an example, we export as both a png image and a pdf:</p>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="examples.html#cb68-1" aria-hidden="true" tabindex="-1"></a>my_plot <span class="ot">&lt;-</span> <span class="fu">geo_plot</span>(<span class="at">data =</span> <span class="fu">filter</span>(bc_geo, HA_Name <span class="sc">==</span> <span class="st">&#39;Fraser&#39;</span>),</span>
+<span id="cb68-2"><a href="examples.html#cb68-2" aria-hidden="true" tabindex="-1"></a>                    <span class="at">geography_col =</span> HSDA_Name,</span>
+<span id="cb68-3"><a href="examples.html#cb68-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">plot_type =</span> <span class="st">&#39;pointmap&#39;</span>,</span>
+<span id="cb68-4"><a href="examples.html#cb68-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">attribute_data =</span> <span class="fu">filter</span>(bc_hosp, HA_Name <span class="sc">==</span> <span class="st">&#39;Fraser Health Authority&#39;</span>),</span>
+<span id="cb68-5"><a href="examples.html#cb68-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">legend_title =</span> <span class="st">&quot;HSDA&quot;</span>,</span>
+<span id="cb68-6"><a href="examples.html#cb68-6" aria-hidden="true" tabindex="-1"></a>                    <span class="at">plot_title =</span> <span class="st">&quot;Fraser Health Regions&quot;</span>)</span>
+<span id="cb68-7"><a href="examples.html#cb68-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-8"><a href="examples.html#cb68-8" aria-hidden="true" tabindex="-1"></a><span class="co"># save map as png image</span></span>
+<span id="cb68-9"><a href="examples.html#cb68-9" aria-hidden="true" tabindex="-1"></a><span class="fu">png</span>(<span class="st">&quot;C:/Users/Michael/Documents/R/working dir/output/output_plot.png&quot;</span>)</span>
+<span id="cb68-10"><a href="examples.html#cb68-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(my_plot)</span>
+<span id="cb68-11"><a href="examples.html#cb68-11" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span>
+<span id="cb68-12"><a href="examples.html#cb68-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-13"><a href="examples.html#cb68-13" aria-hidden="true" tabindex="-1"></a><span class="co"># save map as pdf</span></span>
+<span id="cb68-14"><a href="examples.html#cb68-14" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf</span>(<span class="st">&quot;C:/Users/Michael/Documents/R/working dir/output/output_plot.pdf&quot;</span>)</span>
+<span id="cb68-15"><a href="examples.html#cb68-15" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(my_plot)</span>
+<span id="cb68-16"><a href="examples.html#cb68-16" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div>
+<p>This example uses only the default options for the <code>png()</code> and <code>pdf()</code> functions. Users may specify a variety of arguments in these functions, including image size and resolution. The appropriate syntax for these options can be found by calling the help files for these functions: <code>?png</code> or <code>?pdf</code>.</p>
+</div>
+</div>
+<div id="running-a-proximity-analysis" class="section level3" number="4.2.5">
+<h3><span class="header-section-number">4.2.5</span> Running a proximity analysis</h3>
+<p>One way in which we might analyze these data is to run a proximity analysis. In <strong>geode</strong>, a proximity analysis is implemented using the <code>geo_distance()</code> function. This function calculates the average distance, by region, to point locations of interest. Here we use it to determine average distance to hospital for each community health region in BC. The arguments to the <code>geo_distance()</code> function are the same as those encountered in <code>geo_plot()</code>, except we now specify the data object containing our point locations using <code>location_data</code>. Optionally, we put the legend on the right side of the plot (instead of the default left) using the <code>legend_position</code> argument.</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="examples.html#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">geo_distance</span>(<span class="at">data =</span> bc_geo,</span>
+<span id="cb69-2"><a href="examples.html#cb69-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">geography_col =</span> CHSA_Name,</span>
+<span id="cb69-3"><a href="examples.html#cb69-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">location_data =</span> bc_hosp, </span>
+<span id="cb69-4"><a href="examples.html#cb69-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">legend_title =</span> <span class="st">&quot;Distance (m)&quot;</span>,</span>
+<span id="cb69-5"><a href="examples.html#cb69-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">legend_position =</span> <span class="st">&quot;right&quot;</span>,</span>
+<span id="cb69-6"><a href="examples.html#cb69-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">plot_title =</span> <span class="st">&quot;Average Distance to Hospital in BC&quot;</span>)</span></code></pre></div>
+<p><img src="proximity_map.png" style="width:50.0%" /></p>
+<p>As before, we can look at any particular regions of interest, simply by using the subsetted data created earlier (or by applying the <code>filter</code> function directly within the <code>geo_distance</code> function). Here, we use the <code>n_nearest</code> argument to specify that the average distance calculation should be based on the nearest 2 hospitals rather than the default (n = 3).</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="examples.html#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">geo_distance</span>(<span class="at">data =</span> fraser_geo,</span>
+<span id="cb70-2"><a href="examples.html#cb70-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">geography_col =</span> CHSA_Name,</span>
+<span id="cb70-3"><a href="examples.html#cb70-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">location_data =</span> fraser_hosp, </span>
+<span id="cb70-4"><a href="examples.html#cb70-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">n_nearest =</span> <span class="dv">2</span>,</span>
+<span id="cb70-5"><a href="examples.html#cb70-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">legend_title =</span> <span class="st">&quot;Distance (m)&quot;</span>,</span>
+<span id="cb70-6"><a href="examples.html#cb70-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">plot_title =</span> <span class="st">&quot;Average Distance to Hospital in Fraser Health&quot;</span>)</span></code></pre></div>
+<p><img src="proximity_map_subset.png" style="width:50.0%" /></p>
+</div>
+</div>
+<div id="example-3-cluster-detection" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> Example 3: Cluster detection</h2>
+<div id="background-3" class="section level3" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> Background</h3>
+<p>This example illustrates the cluster detection functionality of the <strong>geode</strong> package. Here, we make use of the 2016 geographic boundary data for Dissemination Blocks (DB), freely available through Statistics Canada:</p>
+<p><a href="https://www12.statcan.gc.ca/census-recensement/2011/geo/bound-limit/bound-limit-2016-eng.cfm" class="uri">https://www12.statcan.gc.ca/census-recensement/2011/geo/bound-limit/bound-limit-2016-eng.cfm</a></p>
+<p>In particular, we will use the Dissemination Block boundaries and population size data that we linked and exported in Example 1. Proceed first through Example 1 in order to create this data file.</p>
+<p>Typically, health data are not publicly available at small geographies like Dissemination Blocks. For this example, we simulate mock health data for demonstrating cluster detection.</p>
+<p>Recall that help files for <strong>geode</strong> functions can be accessed simply by including a ‘?’ before the name of the function of interest. In this example, we focus on the <code>geo_detect()</code> function.</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="examples.html#cb71-1" aria-hidden="true" tabindex="-1"></a>?geode<span class="sc">::</span>geo_detect</span></code></pre></div>
+</div>
+<div id="setup-3" class="section level3" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> Setup</h3>
+<p>Begin by loading the <strong>geode</strong> and <strong>tidyverse</strong> packages.</p>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="examples.html#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(geode)</span>
+<span id="cb72-2"><a href="examples.html#cb72-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<p>We also specify the location and name of data file to be imported.</p>
+<p><em>Recall that you must modify the input directory path (‘indir’) shown below to match the location on your computer where the file from Example 1 (guelph_db.shp) was saved.</em></p>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="examples.html#cb73-1" aria-hidden="true" tabindex="-1"></a>indir <span class="ot">&lt;-</span> <span class="st">&quot;C:/Users/Michael/Documents/R/working dir/data&quot;</span></span>
+<span id="cb73-2"><a href="examples.html#cb73-2" aria-hidden="true" tabindex="-1"></a>infile <span class="ot">&lt;-</span> <span class="st">&quot;guelph_db.shp&quot;</span></span></code></pre></div>
+</div>
+<div id="importing-data-1" class="section level3" number="4.3.3">
+<h3><span class="header-section-number">4.3.3</span> Importing data</h3>
+<p>We import the example geodata using the geo_import() function. Note how we use the <code>paste</code> function here to efficiently combine the input directory path and input filename <em>within</em> the importation function.</p>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="examples.html#cb74-1" aria-hidden="true" tabindex="-1"></a>guelph_geo <span class="ot">&lt;-</span> <span class="fu">geo_import</span>(<span class="at">path =</span> <span class="fu">paste</span>(indir, infile, <span class="at">sep =</span> <span class="st">&quot;/&quot;</span>),</span>
+<span id="cb74-2"><a href="examples.html#cb74-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">filetype =</span> <span class="st">&#39;spatial&#39;</span>)</span></code></pre></div>
+<p>Examine the structure of the geodata. Note that each Dissemination Block (data row) includes information on population size, which we will use in our cluster detection methods.</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="examples.html#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(guelph_geo)</span></code></pre></div>
+</div>
+<div id="simulating-health-event-data" class="section level3" number="4.3.4">
+<h3><span class="header-section-number">4.3.4</span> Simulating health event data</h3>
+<p>For illustrative purposes, we generate a simple distribution of health events (e.g., numbers of cases) using the negative binomial function <code>rnbinom()</code>. The size of the distribution is the number of DBs (data rows) in the guelph_geo dataset. We can look at the distribution by generating a simple histogram using the function <code>hist()</code>.</p>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="examples.html#cb76-1" aria-hidden="true" tabindex="-1"></a>events <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">cases =</span> <span class="fu">rnbinom</span>(<span class="at">n =</span> <span class="fu">nrow</span>(guelph_geo), <span class="at">size =</span> <span class="dv">20</span>, <span class="at">mu =</span> <span class="fl">0.5</span>))</span>
+<span id="cb76-2"><a href="examples.html#cb76-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-3"><a href="examples.html#cb76-3" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(events<span class="sc">$</span>cases)</span></code></pre></div>
+<p><img src="cluster_detect_histogram.png" style="width:50.0%" /></p>
+<p>We see that many regions have zero events, but a few have event counts up to four. This distribution is meant to illustrate the occurrence of some rare event.</p>
+<p>Next, we bind the simulated health event counts (‘cases’) to our geodata using the function <code>bind_cols()</code>. Note that we also make a few adjustments to the distribution and population data to ensure that: i) DBs with zero population size have zero cases, ii) the minimum population size is greater than zero for all DBs (see Chapter <a href="details.html#details">3</a> for more information on cluster detection and small population sizes), and iii) that case counts are not greater than population size in any DB.</p>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="examples.html#cb77-1" aria-hidden="true" tabindex="-1"></a>guelph_data <span class="ot">&lt;-</span> guelph_geo <span class="sc">%&gt;%</span></span>
+<span id="cb77-2"><a href="examples.html#cb77-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_cols</span>(events) <span class="sc">%&gt;%</span></span>
+<span id="cb77-3"><a href="examples.html#cb77-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">cases =</span> <span class="fu">ifelse</span>(DBpop <span class="sc">==</span> <span class="dv">0</span>, <span class="dv">0</span>, cases)) <span class="sc">%&gt;%</span> <span class="co"># regions with zero population must have zero cases</span></span>
+<span id="cb77-4"><a href="examples.html#cb77-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">DBpop =</span> <span class="fu">ifelse</span>(DBpop <span class="sc">==</span> <span class="dv">0</span>, <span class="dv">5</span>, DBpop)) <span class="sc">%&gt;%</span> <span class="co"># reset min population size to be 5 per region</span></span>
+<span id="cb77-5"><a href="examples.html#cb77-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">cases =</span> <span class="fu">ifelse</span>(cases<span class="sc">&gt;</span>DBpop, cases<span class="sc">/</span><span class="dv">2</span>, cases)) <span class="co"># ensure cases are not &gt; than population size</span></span></code></pre></div>
+<p>Finally, let’s generate some quick maps of our simulated case counts. We can plot the entire Guelph region, but also generate a ‘zoomed-in’ map for just the city of Guelph. Note that in the second plot, we simply embed the <code>filter()</code> function <em>within</em> the plot function to subset the data to only those rows for the city of Guelph.</p>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="examples.html#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="co"># map of entire study region</span></span>
+<span id="cb78-2"><a href="examples.html#cb78-2" aria-hidden="true" tabindex="-1"></a><span class="fu">geo_plot</span>(<span class="at">data =</span> guelph_data,</span>
+<span id="cb78-3"><a href="examples.html#cb78-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">geography_col =</span> cases,</span>
+<span id="cb78-4"><a href="examples.html#cb78-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">plot_type =</span> <span class="st">&#39;choropleth&#39;</span>,</span>
+<span id="cb78-5"><a href="examples.html#cb78-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">legend_title =</span> <span class="st">&quot;Case counts&quot;</span>,</span>
+<span id="cb78-6"><a href="examples.html#cb78-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">plot_title =</span> <span class="st">&quot;Census Metropolitan Area of Guelph&quot;</span>)</span>
+<span id="cb78-7"><a href="examples.html#cb78-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-8"><a href="examples.html#cb78-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-9"><a href="examples.html#cb78-9" aria-hidden="true" tabindex="-1"></a><span class="co"># map of only the city of Guelph region</span></span>
+<span id="cb78-10"><a href="examples.html#cb78-10" aria-hidden="true" tabindex="-1"></a><span class="fu">geo_plot</span>(<span class="at">data =</span> <span class="fu">filter</span>(guelph_data, FEDNAME <span class="sc">==</span> <span class="st">&#39;Guelph&#39;</span>),</span>
+<span id="cb78-11"><a href="examples.html#cb78-11" aria-hidden="true" tabindex="-1"></a>         <span class="at">geography_col =</span> cases,</span>
+<span id="cb78-12"><a href="examples.html#cb78-12" aria-hidden="true" tabindex="-1"></a>         <span class="at">plot_type =</span> <span class="st">&#39;choropleth&#39;</span>,</span>
+<span id="cb78-13"><a href="examples.html#cb78-13" aria-hidden="true" tabindex="-1"></a>         <span class="at">legend_title =</span> <span class="st">&quot;Case counts&quot;</span>,</span>
+<span id="cb78-14"><a href="examples.html#cb78-14" aria-hidden="true" tabindex="-1"></a>         <span class="at">plot_title =</span> <span class="st">&quot;City of Guelph&quot;</span>)</span></code></pre></div>
+<p><img src="cluster_detect_case_map.png" /></p>
+<p><img src="cluster_detect_case_map_inset.png" /></p>
+</div>
+<div id="detecting-clusters" class="section level3" number="4.3.5">
+<h3><span class="header-section-number">4.3.5</span> Detecting clusters</h3>
+<p>In order to run our cluster detection algorithm using the <code>geo_detect()</code> function, we must at least specify the geodata and the columns corresponding to the event (case) counts and the population sizes for each region. The default settings are to run the Kulldorff binomial model and generate an interactive plot as the output; hence, these do not need to be specified, but have been included here for clarity.</p>
+<p><em>Note that statistical significance of the clusters is calculated using simulation methods, which may require several minutes of computation time depending on the size of the dataset.</em></p>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="examples.html#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="fu">geo_detect</span>(<span class="at">dat =</span> guelph_data,</span>
+<span id="cb79-2"><a href="examples.html#cb79-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">counts =</span> cases,</span>
+<span id="cb79-3"><a href="examples.html#cb79-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">pop =</span> DBpop,</span>
+<span id="cb79-4"><a href="examples.html#cb79-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">method =</span> <span class="st">&#39;kulldorff_binomial&#39;</span>,</span>
+<span id="cb79-5"><a href="examples.html#cb79-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">plot =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<p><img src="cluster_detect_binom.png" /></p>
+<p><em>As described above, these are purely artificial data and do not represent any real health events for this region</em>.</p>
+<p>The alternative method is the Kulldorff Poisson model, which can be run following the same syntax as above. This model allows us to specify the expected event counts for each region, or to have them calculated automatically (which we do here, by specifying <code>expected_counts = NULL</code>). For this example, we do not request a plot output (<code>plot = FALSE</code>), so the function instead provides the full listing of the Dissemination Blocks included in the top 3 clusters.</p>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="examples.html#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="fu">geo_detect</span>(<span class="at">dat =</span> guelph_data,</span>
+<span id="cb80-2"><a href="examples.html#cb80-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">counts =</span> cases,</span>
+<span id="cb80-3"><a href="examples.html#cb80-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">pop =</span> DBpop,</span>
+<span id="cb80-4"><a href="examples.html#cb80-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">expected_counts =</span> <span class="cn">NULL</span>,</span>
+<span id="cb80-5"><a href="examples.html#cb80-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">method =</span> <span class="st">&#39;kulldorff_poisson&#39;</span>,</span>
+<span id="cb80-6"><a href="examples.html#cb80-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">plot =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<p>Notice that the algorithm detects significant clusters in the city of Guelph region, but that these can be hard to visualize in a map of the entire region because the urban Dissemination Blocks are so small. It may therefore be useful to run a separate cluster detection analysis on just the city of Guelph region. As before, we can do this simply by embedding the <code>filter()</code> function <em>within</em> the detection function to subset to only those rows for the city of Guelph.</p>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="examples.html#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="fu">geo_detect</span>(<span class="at">dat =</span> <span class="fu">filter</span>(guelph_data, FEDNAME <span class="sc">==</span> <span class="st">&#39;Guelph&#39;</span>),</span>
+<span id="cb81-2"><a href="examples.html#cb81-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">counts =</span> cases,</span>
+<span id="cb81-3"><a href="examples.html#cb81-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">pop =</span> DBpop,</span>
+<span id="cb81-4"><a href="examples.html#cb81-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">method =</span> <span class="st">&#39;kulldorff_binomial&#39;</span>,</span>
+<span id="cb81-5"><a href="examples.html#cb81-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">plot =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<p><img src="cluster_detect_binom_inset.png" /></p>
+<p>As with <code>geo_plot()</code> the transparency of the choropleth map can be adjusted to reveal more or less of the background reference layer (using the <code>transparency =</code> argument), and the information shown when hovering over a region can be modified (any column in the input dataset can be specified with the <code>hover_id =</code> argument).</p>
+<p>As before, all of these maps can be exported for further use. Using the above cluster map for Guelph as an example, we could export it as either an image or pdf:</p>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="examples.html#cb82-1" aria-hidden="true" tabindex="-1"></a>my_clusters <span class="ot">&lt;-</span> <span class="fu">geo_detect</span>(<span class="at">dat =</span> <span class="fu">filter</span>(guelph_data, FEDNAME <span class="sc">==</span> <span class="st">&#39;Guelph&#39;</span>),</span>
+<span id="cb82-2"><a href="examples.html#cb82-2" aria-hidden="true" tabindex="-1"></a>                          <span class="at">counts =</span> cases,</span>
+<span id="cb82-3"><a href="examples.html#cb82-3" aria-hidden="true" tabindex="-1"></a>                          <span class="at">pop =</span> DBpop,</span>
+<span id="cb82-4"><a href="examples.html#cb82-4" aria-hidden="true" tabindex="-1"></a>                          <span class="at">method =</span> <span class="st">&#39;kulldorff_binomial&#39;</span>,</span>
+<span id="cb82-5"><a href="examples.html#cb82-5" aria-hidden="true" tabindex="-1"></a>                          <span class="at">plot =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb82-6"><a href="examples.html#cb82-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb82-7"><a href="examples.html#cb82-7" aria-hidden="true" tabindex="-1"></a><span class="co"># save map as png image</span></span>
+<span id="cb82-8"><a href="examples.html#cb82-8" aria-hidden="true" tabindex="-1"></a><span class="fu">png</span>(<span class="st">&quot;C:/Users/Michael/Documents/R/working dir/output/cluster_output_plot.png&quot;</span>,</span>
+<span id="cb82-9"><a href="examples.html#cb82-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">height =</span> <span class="dv">4</span>, <span class="at">width =</span> <span class="dv">6</span>, <span class="at">res =</span> <span class="dv">300</span>)</span>
+<span id="cb82-10"><a href="examples.html#cb82-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(my_clusters)</span>
+<span id="cb82-11"><a href="examples.html#cb82-11" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span>
+<span id="cb82-12"><a href="examples.html#cb82-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb82-13"><a href="examples.html#cb82-13" aria-hidden="true" tabindex="-1"></a><span class="co"># save map as pdf</span></span>
+<span id="cb82-14"><a href="examples.html#cb82-14" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf</span>(<span class="st">&quot;C:/Users/Michael/Documents/R/working dir/output/cluster_output_plot.pdf&quot;</span>)</span>
+<span id="cb82-15"><a href="examples.html#cb82-15" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(my_clusters)</span>
+<span id="cb82-16"><a href="examples.html#cb82-16" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="details.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="help.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["users_manual.pdf", "users_manual.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

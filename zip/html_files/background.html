@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>GEODE USER’S MANUAL</title>
+  <meta name="description" content="GEODE USER’S MANUAL" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="GEODE USER’S MANUAL" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="GEODE USER’S MANUAL" />
+  
+  
+  
+
+
+
+<meta name="date" content="2021-03-31" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+<link rel="next" href="usage.html"/>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Sections</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="background.html"><a href="background.html"><i class="fa fa-check"></i><b>1</b> Background</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="background.html"><a href="background.html#purpose"><i class="fa fa-check"></i><b>1.1</b> Purpose</a></li>
+<li class="chapter" data-level="1.2" data-path="background.html"><a href="background.html#system-requirements"><i class="fa fa-check"></i><b>1.2</b> System requirements</a></li>
+<li class="chapter" data-level="1.3" data-path="background.html"><a href="background.html#downloading-and-installing"><i class="fa fa-check"></i><b>1.3</b> Downloading and installing</a></li>
+<li class="chapter" data-level="1.4" data-path="background.html"><a href="background.html#help-files"><i class="fa fa-check"></i><b>1.4</b> Help files</a></li>
+<li class="chapter" data-level="1.5" data-path="background.html"><a href="background.html#boundary-files-and-sample-data-sets"><i class="fa fa-check"></i><b>1.5</b> Boundary files and sample data sets</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="usage.html"><a href="usage.html"><i class="fa fa-check"></i><b>2</b> Using geode</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="usage.html"><a href="usage.html#structure-of-the-tool"><i class="fa fa-check"></i><b>2.1</b> Structure of the tool</a></li>
+<li class="chapter" data-level="2.2" data-path="usage.html"><a href="usage.html#getting-started"><i class="fa fa-check"></i><b>2.2</b> Getting started</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="usage.html"><a href="usage.html#setup"><i class="fa fa-check"></i><b>2.2.1</b> Setup</a></li>
+<li class="chapter" data-level="2.2.2" data-path="usage.html"><a href="usage.html#importing-data-with-geo_import"><i class="fa fa-check"></i><b>2.2.2</b> Importing data with <code>geo_import()</code></a></li>
+<li class="chapter" data-level="2.2.3" data-path="usage.html"><a href="usage.html#creating-maps-with-geo_plot"><i class="fa fa-check"></i><b>2.2.3</b> Creating maps with <code>geo_plot()</code></a></li>
+<li class="chapter" data-level="2.2.4" data-path="usage.html"><a href="usage.html#generating-spatial-statistics-with-geo_calculate"><i class="fa fa-check"></i><b>2.2.4</b> Generating spatial statistics with <code>geo_calculate()</code></a></li>
+<li class="chapter" data-level="2.2.5" data-path="usage.html"><a href="usage.html#additional-information-on-exporting-output"><i class="fa fa-check"></i><b>2.2.5</b> Additional information on exporting output</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="details.html"><a href="details.html"><i class="fa fa-check"></i><b>3</b> Technical details</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="details.html"><a href="details.html#geo_import"><i class="fa fa-check"></i><b>3.1</b> <code>geo_import()</code></a></li>
+<li class="chapter" data-level="3.2" data-path="details.html"><a href="details.html#geo_plot"><i class="fa fa-check"></i><b>3.2</b> <code>geo_plot()</code></a></li>
+<li class="chapter" data-level="3.3" data-path="details.html"><a href="details.html#geo_distance"><i class="fa fa-check"></i><b>3.3</b> <code>geo_distance()</code></a></li>
+<li class="chapter" data-level="3.4" data-path="details.html"><a href="details.html#geo_detect"><i class="fa fa-check"></i><b>3.4</b> <code>geo_detect()</code></a></li>
+<li class="chapter" data-level="3.5" data-path="details.html"><a href="details.html#geo_calculate"><i class="fa fa-check"></i><b>3.5</b> <code>geo_calculate()</code></a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="details.html"><a href="details.html#global-spatial-autocorrelation"><i class="fa fa-check"></i><b>3.5.1</b> global spatial autocorrelation</a></li>
+<li class="chapter" data-level="3.5.2" data-path="details.html"><a href="details.html#local-spatial-autocorrelation"><i class="fa fa-check"></i><b>3.5.2</b> local spatial autocorrelation</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="details.html"><a href="details.html#geo_export"><i class="fa fa-check"></i><b>3.6</b> <code>geo_export()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="examples.html"><a href="examples.html"><i class="fa fa-check"></i><b>4</b> Examples</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="examples.html"><a href="examples.html#example-1-importing-and-wrangling-data"><i class="fa fa-check"></i><b>4.1</b> Example 1: Importing and wrangling data</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="examples.html"><a href="examples.html#background-1"><i class="fa fa-check"></i><b>4.1.1</b> Background</a></li>
+<li class="chapter" data-level="4.1.2" data-path="examples.html"><a href="examples.html#setup-1"><i class="fa fa-check"></i><b>4.1.2</b> Setup</a></li>
+<li class="chapter" data-level="4.1.3" data-path="examples.html"><a href="examples.html#data-importation"><i class="fa fa-check"></i><b>4.1.3</b> Data importation</a></li>
+<li class="chapter" data-level="4.1.4" data-path="examples.html"><a href="examples.html#data-wrangling"><i class="fa fa-check"></i><b>4.1.4</b> Data wrangling</a></li>
+<li class="chapter" data-level="4.1.5" data-path="examples.html"><a href="examples.html#data-export"><i class="fa fa-check"></i><b>4.1.5</b> Data export</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="examples.html"><a href="examples.html#example-2-mapping-and-proximity-analysis"><i class="fa fa-check"></i><b>4.2</b> Example 2: mapping and proximity analysis</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="examples.html"><a href="examples.html#background-2"><i class="fa fa-check"></i><b>4.2.1</b> Background</a></li>
+<li class="chapter" data-level="4.2.2" data-path="examples.html"><a href="examples.html#setup-2"><i class="fa fa-check"></i><b>4.2.2</b> Setup</a></li>
+<li class="chapter" data-level="4.2.3" data-path="examples.html"><a href="examples.html#importing-data"><i class="fa fa-check"></i><b>4.2.3</b> Importing data</a></li>
+<li class="chapter" data-level="4.2.4" data-path="examples.html"><a href="examples.html#creating-maps"><i class="fa fa-check"></i><b>4.2.4</b> Creating maps</a></li>
+<li class="chapter" data-level="4.2.5" data-path="examples.html"><a href="examples.html#running-a-proximity-analysis"><i class="fa fa-check"></i><b>4.2.5</b> Running a proximity analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="examples.html"><a href="examples.html#example-3-cluster-detection"><i class="fa fa-check"></i><b>4.3</b> Example 3: Cluster detection</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="examples.html"><a href="examples.html#background-3"><i class="fa fa-check"></i><b>4.3.1</b> Background</a></li>
+<li class="chapter" data-level="4.3.2" data-path="examples.html"><a href="examples.html#setup-3"><i class="fa fa-check"></i><b>4.3.2</b> Setup</a></li>
+<li class="chapter" data-level="4.3.3" data-path="examples.html"><a href="examples.html#importing-data-1"><i class="fa fa-check"></i><b>4.3.3</b> Importing data</a></li>
+<li class="chapter" data-level="4.3.4" data-path="examples.html"><a href="examples.html#simulating-health-event-data"><i class="fa fa-check"></i><b>4.3.4</b> Simulating health event data</a></li>
+<li class="chapter" data-level="4.3.5" data-path="examples.html"><a href="examples.html#detecting-clusters"><i class="fa fa-check"></i><b>4.3.5</b> Detecting clusters</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="help.html"><a href="help.html"><i class="fa fa-check"></i><b>5</b> Help files</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="help.html"><a href="help.html#geo_import-1"><i class="fa fa-check"></i><b>5.1</b> <code>geo_import()</code></a></li>
+<li class="chapter" data-level="5.2" data-path="help.html"><a href="help.html#geo_plot-1"><i class="fa fa-check"></i><b>5.2</b> <code>geo_plot()</code></a></li>
+<li class="chapter" data-level="5.3" data-path="help.html"><a href="help.html#geo_distance-1"><i class="fa fa-check"></i><b>5.3</b> <code>geo_distance()</code></a></li>
+<li class="chapter" data-level="5.4" data-path="help.html"><a href="help.html#geo_detect-1"><i class="fa fa-check"></i><b>5.4</b> <code>geo_detect()</code></a></li>
+<li class="chapter" data-level="5.5" data-path="help.html"><a href="help.html#geo_calculate-1"><i class="fa fa-check"></i><b>5.5</b> <code>geo_calculate()</code></a></li>
+<li class="chapter" data-level="5.6" data-path="help.html"><a href="help.html#geo_export-1"><i class="fa fa-check"></i><b>5.6</b> <code>geo_export()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="refs.html"><a href="refs.html"><i class="fa fa-check"></i><b>6</b> References</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="refs.html"><a href="refs.html#key-references"><i class="fa fa-check"></i><b>6.1</b> Key references</a></li>
+<li class="chapter" data-level="6.2" data-path="refs.html"><a href="refs.html#additional-resources"><i class="fa fa-check"></i><b>6.2</b> Additional resources</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="refs.html"><a href="refs.html#books"><i class="fa fa-check"></i><b>6.2.1</b> Books</a></li>
+<li class="chapter" data-level="6.2.2" data-path="refs.html"><a href="refs.html#papers"><i class="fa fa-check"></i><b>6.2.2</b> Papers</a></li>
+<li class="chapter" data-level="6.2.3" data-path="refs.html"><a href="refs.html#websites-and-online-courses"><i class="fa fa-check"></i><b>6.2.3</b> Websites and online courses</a></li>
+<li class="chapter" data-level="6.2.4" data-path="refs.html"><a href="refs.html#tutorials-and-examples"><i class="fa fa-check"></i><b>6.2.4</b> Tutorials and examples</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Created with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">GEODE USER’S MANUAL</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">GEODE USER’S MANUAL</h1>
+<p class="author"><em></em></p>
+<p class="date" style="margin-top: 1.5em;"><em>2021-03-31</em></p>
+</div>
+<div id="background" class="section level1" number="1">
+<h1><span class="header-section-number">Chapter 1</span> Background</h1>
+<div id="purpose" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Purpose</h2>
+<p>Geode is a software tool for mapping and analysis of geospatial data. It was designed in consultation with partners across the Canadian provincial and territorial cancer agencies.</p>
+<p>Development of geode was motivated by a need for local information on cancer screening. The tool is intended to support the work of jurisdictions as they map and analyze cancer screening data, but is flexible enough to allow for a wide variety of geospatial work. The tool supports mapping and analysis of any geospatial boundary data available via shapefiles, any point locations identifiable as x-y positions (e.g., longitude and latitude), and any measures that can be assigned to regions (e.g., population size and density, age and sex distribution, counts and rates of disease or health conditions, socio-economic indicators, environmental health measures, etc.).</p>
+<p>Users of this tool are expected to have a basic understanding of the characteristics, limitations and use of geospatial data and the basic methods used in the analysis of such data.</p>
+</div>
+<div id="system-requirements" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> System requirements</h2>
+<p>The geode package was written in the freely available, open source software <strong>R</strong> (<a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a>). The tool is intended to be used with R version 4.0.0 (April 2020) or later and RStudio (<a href="https://rstudio.com/" class="uri">https://rstudio.com/</a>) version 1.2.1335 or later. <em>Earlier versions of R will not support all of the functionality of this tool and must be updated prior to installation.</em></p>
+<p>It should be noted that R is an ‘in-memory’ software, such that all data work is carried out in RAM. This has the benefit of enhanced performance, but can be an important consideration when working with large datasets. Users will need to ensure that their machines running R have sufficient RAM to accommodate the spatial datasets they wish to analyze.</p>
+<p>A number of R packages are used by geode, including <strong>sf</strong>, <strong>tmap</strong>, <strong>ggplot2</strong>, and <strong>spdep</strong>. The appropriate versions of all required packages will be installed if you follow the instructions provided here. However, users must have read/write access to a local or network folder for installing and updating R packages.</p>
+<p>This tool is designed to be compatible with the essential data manipulation functions of R, particularly those from the <strong>tidyverse</strong> packages <strong>dplyr</strong> and <strong>tidyr</strong>, so that it integrates seamlessly with R workflows.</p>
+</div>
+<div id="downloading-and-installing" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> Downloading and installing</h2>
+<p>In order to get started with geode, you must first install the package on your computer. Note that installation may take only a few minutes (if you already have most of the required R libraries), but could take half-an-hour or more (e.g., if you are starting from a newly downloaded version of R).</p>
+<p>Installation can either be done directly in your R session, by downloading the package from <a href="https://github.com/">GitHub</a>:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="background.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;remotes&quot;</span>)</span>
+<span id="cb1-2"><a href="background.html#cb1-2" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;cpacc/geode&quot;</span>)</span></code></pre></div>
+<p>Or, you can install from the geode <a href="https://github.com/cpacc/geode/blob/master/zip/geode_zip.zip">zip file</a> following these two steps:</p>
+<p>First, save the zip file to your computer and unzip using e.g., WinZip, 7-Zip, etc.</p>
+<p>Second, update the filepath shown below (<code>my_libpath</code>) so that it points to the location on your computer where the geode source file (“geode_0.1.1.tar.gz”) is saved. Run the updated lines of code in your RStudio console and geode will be installed.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="background.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># specify current location of geode source file on your computer</span></span>
+<span id="cb2-2"><a href="background.html#cb2-2" aria-hidden="true" tabindex="-1"></a>my_libpath <span class="ot">&lt;-</span> <span class="st">&quot;C:/Users/Michael/Documents/R/working dir/geode_prototype/R&quot;</span></span>
+<span id="cb2-3"><a href="background.html#cb2-3" aria-hidden="true" tabindex="-1"></a>package_name <span class="ot">&lt;-</span> <span class="st">&quot;geode_0.1.1.tar.gz&quot;</span></span>
+<span id="cb2-4"><a href="background.html#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="background.html#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="background.html#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># install geode</span></span>
+<span id="cb2-7"><a href="background.html#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">paste</span>(my_libpath, package_name, <span class="at">sep =</span> <span class="st">&quot;/&quot;</span>),</span>
+<span id="cb2-8"><a href="background.html#cb2-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">repos =</span> <span class="cn">NULL</span>, <span class="at">type =</span> <span class="st">&quot;source&quot;</span>)</span></code></pre></div>
+<p>Regardless of whether you install from Github or from the zip file, this process will also install other R packages (‘dependencies’) used by geode from an online repository. It may take several minutes to install all dependencies and you may be asked i) if you want to update certain packages that have more recent versions available (recommended, but probably not essential – this could take a while if many packages need updating), and ii) if you wish to install from sources the packages which need compilation (recommended and probably essential in order to get the appropriate version of the required packages).</p>
+<p>Note that installation of geode and its dependencies only needs to be done the first time you use geode, or if there are any updates released to the package itself.</p>
+<p>After installation, you should see something like the following in your RStudio console window:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="background.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="sc">*</span> installing <span class="sc">*</span>source<span class="sc">*</span> package <span class="st">&#39;geode&#39;</span> ...</span>
+<span id="cb3-2"><a href="background.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="sc">**</span> using staged installation</span>
+<span id="cb3-3"><a href="background.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="sc">**</span> R</span>
+<span id="cb3-4"><a href="background.html#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="sc">**</span> byte<span class="sc">-</span>compile and prepare package <span class="cf">for</span> lazy loading</span>
+<span id="cb3-5"><a href="background.html#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="sc">**</span> help</span>
+<span id="cb3-6"><a href="background.html#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="sc">**</span><span class="er">*</span> installing help indices</span>
+<span id="cb3-7"><a href="background.html#cb3-7" aria-hidden="true" tabindex="-1"></a>  converting help <span class="cf">for</span> package <span class="st">&#39;geode&#39;</span></span>
+<span id="cb3-8"><a href="background.html#cb3-8" aria-hidden="true" tabindex="-1"></a>    finding HTML links ... done</span>
+<span id="cb3-9"><a href="background.html#cb3-9" aria-hidden="true" tabindex="-1"></a>    geo_calculate                           html  </span>
+<span id="cb3-10"><a href="background.html#cb3-10" aria-hidden="true" tabindex="-1"></a>    geo_detect                              html  </span>
+<span id="cb3-11"><a href="background.html#cb3-11" aria-hidden="true" tabindex="-1"></a>    geo_distance                            html  </span>
+<span id="cb3-12"><a href="background.html#cb3-12" aria-hidden="true" tabindex="-1"></a>    geo_export                              html  </span>
+<span id="cb3-13"><a href="background.html#cb3-13" aria-hidden="true" tabindex="-1"></a>    geo_import                              html  </span>
+<span id="cb3-14"><a href="background.html#cb3-14" aria-hidden="true" tabindex="-1"></a>    geo_plot                                html  </span>
+<span id="cb3-15"><a href="background.html#cb3-15" aria-hidden="true" tabindex="-1"></a>    pipe                                    html  </span>
+<span id="cb3-16"><a href="background.html#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="sc">**</span> building package indices</span>
+<span id="cb3-17"><a href="background.html#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="sc">**</span> testing <span class="cf">if</span> installed package can be loaded from temporary location</span>
+<span id="cb3-18"><a href="background.html#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="sc">**</span><span class="er">*</span> arch <span class="sc">-</span> i386</span>
+<span id="cb3-19"><a href="background.html#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="sc">**</span><span class="er">*</span> arch <span class="sc">-</span> x64</span>
+<span id="cb3-20"><a href="background.html#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="sc">**</span> testing <span class="cf">if</span> installed package can be loaded from final location</span>
+<span id="cb3-21"><a href="background.html#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="sc">**</span><span class="er">*</span> arch <span class="sc">-</span> i386</span>
+<span id="cb3-22"><a href="background.html#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="sc">**</span><span class="er">*</span> arch <span class="sc">-</span> x64</span>
+<span id="cb3-23"><a href="background.html#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="sc">**</span> testing <span class="cf">if</span> installed package keeps a record of temporary installation path</span>
+<span id="cb3-24"><a href="background.html#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="sc">*</span> <span class="fu">DONE</span> (geode)</span></code></pre></div>
+<p>Now that it’s installed, you only need to load the geode package for use when you start a new R session.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="background.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(geode)</span></code></pre></div>
+<p>Before working with your own data, it is strongly recommended that you try the example in Chapter <a href="usage.html#usage">2</a> (see <em>2.2 Getting started</em>) and some of the examples found later in Chapter <a href="examples.html#examples">4</a>.</p>
+</div>
+<div id="help-files" class="section level2" number="1.4">
+<h2><span class="header-section-number">1.4</span> Help files</h2>
+<p>If geode installed and loaded correctly, you will be able to access the help files supporting the available functions. Each help file contains a brief description of the function itself and an overview of the syntax needed to use the function properly. Help files also contain simple examples of how a function may be used.</p>
+<p>For example, try running the help commands below in the console window of RStudio – help text should appear in the Help window at bottom right of your RStudio session.</p>
+<p>Access the function for importing spatial data:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="background.html#cb5-1" aria-hidden="true" tabindex="-1"></a>?geo_import</span></code></pre></div>
+<p>Access the function for plotting maps:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="background.html#cb6-1" aria-hidden="true" tabindex="-1"></a>?geo_plot</span></code></pre></div>
+<p>Access the function for calculating spatial statistics/generating statistical maps:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="background.html#cb7-1" aria-hidden="true" tabindex="-1"></a>?geo_calculate</span></code></pre></div>
+<p>Access the function for identifying spatial clusters:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="background.html#cb8-1" aria-hidden="true" tabindex="-1"></a>?geo_detect</span></code></pre></div>
+<p>Access the function for calculating and mapping proximity:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="background.html#cb9-1" aria-hidden="true" tabindex="-1"></a>?geo_distance</span></code></pre></div>
+<p>Access the function for exporting data:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="background.html#cb10-1" aria-hidden="true" tabindex="-1"></a>?geo_export</span></code></pre></div>
+<p>Complete help documentation is also included in Chapter <a href="help.html#help">5</a> of this manual.</p>
+</div>
+<div id="boundary-files-and-sample-data-sets" class="section level2" number="1.5">
+<h2><span class="header-section-number">1.5</span> Boundary files and sample data sets</h2>
+<p>The geode package can work with any geospatial data based on shapefiles (.shp) and corresponding attribute data from comma separated value files (.csv). The examples provided in this user’s manual make use of publicly available geospatial datasets, as described below.</p>
+<p>A wide range of geographic data are freely available from Statistics Canada. A helpful reference page, containing links to geographic boundary files, maps, attribute data and references, can be found at:</p>
+<p><a href="https://www12.statcan.gc.ca/census-recensement/2016/geo/index-eng.cfm" class="uri">https://www12.statcan.gc.ca/census-recensement/2016/geo/index-eng.cfm</a></p>
+<p>In particular, geographic boundary files from the Canadian Census are available at:</p>
+<p><a href="https://www12.statcan.gc.ca/census-recensement/2011/geo/bound-limit/bound-limit-eng.cfm" class="uri">https://www12.statcan.gc.ca/census-recensement/2011/geo/bound-limit/bound-limit-eng.cfm</a></p>
+<p>There are two ways to obtain these boundary files. First, users can select a census year and then use the point-and-click options to define a boundary file for download. In geode we exclusively use shapefiles (.sph) to define geographic boundaries – the Statistics Canada website identifies these as “ArcGIS” files.</p>
+<p><img src="StatsCan_boundary_files_webpage.PNG" /></p>
+<p>After clicking ‘Continue,’ a download link will appear allowing you to save the selected boundary file as a zip folder (there are also instructions provided on how to open zip files). Once you have saved and unzipped the file, it can be directly used by geode: simply specify the folder path for the shapefile in the <code>geo_import()</code> function.</p>
+<p>Alternatively, users can download and unzip boundary files directly in R. For example, imagine we have used the point-and-click options on the above Statistic Canada webpage to select a shapefile (format ‘ArcGIS’) for the Canadian Provinces/territories. When we click ‘Continue’ a download link appears for our file: ‘lpr_000b16a_e.zip (ZIP version, 27,960.0 kb).’ In Windows, we can right-click on this link and copy the link address so that it can be pasted into our R script for further use.</p>
+<p>In the example code below, we use this link address as our ‘source_path’ and also define the ‘destination_path’ on our computer where the zip file should be saved. It is then simply a matter of using the R functions <code>download.file()</code> and <code>unzip()</code> to retrieve the shapefile from the Statistics Canada website and unzip the folder so that we can import the boundaries using geode.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="background.html#cb11-1" aria-hidden="true" tabindex="-1"></a>source_path <span class="ot">&lt;-</span> <span class="st">&quot;https://www12.statcan.gc.ca/census-recensement/2011/geo/bound-limit/files-fichiers/2016/lpr_000b16a_e.zip&quot;</span></span>
+<span id="cb11-2"><a href="background.html#cb11-2" aria-hidden="true" tabindex="-1"></a>destination_path <span class="ot">&lt;-</span> <span class="st">&quot;C:/Users/Michael/Documents/R/data/lpr_000b16a_e.zip&quot;</span> <span class="co"># change to your download folder path</span></span>
+<span id="cb11-3"><a href="background.html#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="background.html#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(<span class="at">url =</span> source_path, <span class="at">destfile =</span> destination_path)</span>
+<span id="cb11-5"><a href="background.html#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="background.html#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span>(<span class="at">zipfile =</span> destination_path)</span></code></pre></div>
+<p>Large shapefiles (e.g., dissemination blocks for all of Canada) may take several minutes to download. Fortunately, you only need to download and unzip a shapefile once.</p>
+<p>Many of the example datasets used in this manual are from the Statistics Canada website. In particular, geographic boundary data files were obtained from:</p>
+<p><a href="https://www12.statcan.gc.ca/census-recensement/2011/geo/bound-limit/bound-limit-2016-eng.cfm" class="uri">https://www12.statcan.gc.ca/census-recensement/2011/geo/bound-limit/bound-limit-2016-eng.cfm</a></p>
+<p>and corresponding geographic attributes were obtained from:</p>
+<p><a href="https://www12.statcan.gc.ca/census-recensement/2011/geo/ref/att-eng.cfm" class="uri">https://www12.statcan.gc.ca/census-recensement/2011/geo/ref/att-eng.cfm</a></p>
+<p>Specific data for British Columbia was obtained from DataBC at</p>
+<p><a href="https://catalogue.data.gov.bc.ca/dataset" class="uri">https://catalogue.data.gov.bc.ca/dataset</a></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="usage.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["users_manual.pdf", "users_manual.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
