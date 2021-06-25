@@ -32,12 +32,12 @@ You can install geode directly in R from [GitHub](https://github.com/) with:
 
 ``` r
 install.packages("remotes")
-remotes::install_github("michael-otterstatter/geode")
+remotes::install_github("cpacc/geode")
 ```
 
 Alternatively, you can download geode as a zip file and install following the instructions in the User's Manual under the Chapter 1 section *Downloading and installing*.
 
-https://github.com/michael-otterstatter/geode/blob/master/zip/geode_zip.zip
+https://github.com/cpacc/geode/blob/master/zip/geode_zip.zip
 
 ## Getting started
 
