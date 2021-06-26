@@ -39,9 +39,15 @@ Alternatively, you can download geode as a zip file and install
 following the instructions in the User’s Manual under the Chapter 1
 section *Downloading and installing*.
 
-<https://github.com/cpacc/geode/blob/master/zip/geode_zip.zip>
+<https://github.com/cpacc/geode/blob/main/zip/geode_0.1.1.tar.7z>
+
+To unzip the file after downloading, you will need to install the freely
+available 7-Zip program from <https://www.7-zip.org/>
 
 ## Getting started
 
-All technical details, examples and instructions for getting started are
-found in the geode User’s Manual.
+All technical details, system requirements, examples and instructions
+for getting started are found in the geode User’s Manual. A PDF version
+of the manual can be found at
+
+<https://github.com/cpacc/geode/blob/main/zip/users_manual_PDF.pdf>
