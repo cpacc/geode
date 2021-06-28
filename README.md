@@ -59,3 +59,10 @@ An HTML version of the manual is also provided at
 The HTML version is contained in a zip folder. Download and unzip (using
 7-zip, as above), and then click on the manual shortcut
 ‘users\_manual\_HTML’.
+
+## Example data
+
+All data files used in the examples are freely available online. For
+ease-of-use, certain data files are also included here as a 7-zip file
+
+<https://github.com/cpacc/geode/blob/main/zip/example_data.7z>
