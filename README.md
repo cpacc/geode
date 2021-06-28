@@ -51,3 +51,11 @@ for getting started are found in the geode User’s Manual. A PDF version
 of the manual can be found at
 
 <https://github.com/cpacc/geode/blob/main/zip/users_manual_PDF.pdf>
+
+An HTML version of the manual is also provided at
+
+<https://github.com/cpacc/geode/blob/main/zip/users_manual_HTML.7z>
+
+The HTML version is contained in a zip folder. Download and unzip (using
+7-zip, as above), and then click on the manual shortcut
+‘users\_manual\_HTML’.
