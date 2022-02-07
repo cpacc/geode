@@ -51,7 +51,7 @@ from transparent (0) to opaque (1). Intermediate values allow more or less visib
 
 \item{hover_id}{Name of the data column containing the label or value to be shown
 when hovering over a particular geographic unit.  For interactive maps only.
-Default is the value given in specified 'counts' column.  OPTIONAL.}
+Default is the value given in the specified 'counts' column.  OPTIONAL.}
 
 \item{interactive}{TRUE (default) or FALSE.  Indicating whether map should be
 generated as an interactive view or as a static image. OPTIONAL.}

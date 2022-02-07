@@ -18,9 +18,11 @@ a simplified dataset by removing vertices; useful for creating smaller, more man
 working versions of large shapefiles. OPTIONAL.}
 
 \item{validity_check}{TRUE or FALSE (default). If importing a shapefile, optionally
-runs a validity check on each of the geometries and prints the results.  Geometries
-may be invalid due to, for example, slivers or self-intersections; such issues may
-be present in the imported source file, or arise during simplification. OPTIONAL.}
+runs a validity check on each of the geometries and adds the results as a new column
+"valid_geometry" in the imported data object.  Invalid geometries are automatically
+fixed during import.  Geometries may be invalid due to, for example, slivers or
+self-intersections; such issues may be present in the imported source file, or arise
+during simplification. OPTIONAL.}
 }
 \value{
 Returns a simple features (if source is a shapefile) or tibble

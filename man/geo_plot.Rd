@@ -8,6 +8,7 @@ geo_plot(
   data,
   geography_col,
   attribute_data = NA,
+  points_col,
   plot_type,
   style = NA,
   transparency = NA,
@@ -22,7 +23,9 @@ geo_plot(
 }
 \arguments{
 \item{data}{Input data for plotting; must be a simple features (sf)
-shape object, e.g., imported by geo_import(). REQUIRED.}
+shape object, e.g., imported by geo_import(). REQUIRED. (Note: if input data
+contains invalid geometries, a warning will be provided and the geometries
+will be automatically fixed prior to plotting)}
 
 \item{geography_col}{Name of the data column containing the feature,
 e.g., geographic units, population size, etc., to be plotted. REQUIRED.}
@@ -33,6 +36,10 @@ the attributes (e.g., lat and lon) titled 'x' and 'y'. Coordinate reference
 system (CRS) for attribute data is automatically transformed to match that of
 input geographic data.  If CRS is missing for attribute data, it is assumed to be
 WGS84. REQUIRED (for pointmaps and heatmaps only).}
+
+\item{points_col}{Name of the data column containing the label or value to be shown
+when hovering over a particular point location.  For interactive pointmaps only.
+Default is the first column in the specified attribute dataset.  OPTIONAL.}
 
 \item{plot_type}{Name of one of the predefined plot types: current options
 are 'choropleth', 'pointmap' and 'heatmap'. REQUIRED.}
@@ -60,8 +67,8 @@ Default is the name or value given in specified geography_col.  OPTIONAL.}
 \item{plot_title}{Main title of plot.  If omitted, no title is shown. Applies only to static
 image maps. OPTIONAL.}
 
-\item{legend_title}{Title of plot legend.  If 'none', legend is removed.
-If no value is given, feature_col name is used. OPTIONAL.}
+\item{legend_title}{Title of plot legend. If no value is given, geography_col name is used.
+In static maps, the legend is removed if legend_title = 'none'.  OPTIONAL.}
 
 \item{scale_bar}{TRUE or FALSE (default).  Indicating whether reference scale
 bar should be shown (bottom left of plot). Applies only to static image maps. OPTIONAL.}
@@ -82,23 +89,24 @@ from geospatial and attribute data.
 \examples{
 # simple static choropleth map with plot title and legend title ------------------
 geo_plot(data = my_geo_data,
- geography_col = region_data_column,
+ geography_col = 'region_data_column',
  plot_type = 'choropleth',
  plot_title = 'My Geographic Regions',
  legend_title = 'Region Name')
 
 # interactive choropleth map with partial transparency of shaded regions ---------
 geo_plot(data = my_geo_data,
- geography_col = region_data_column,
+ geography_col = 'region_data_column',
  plot_type = 'choropleth',
  transparency = 0.5,
- hover_id = region_popsize_column,
+ hover_id = 'region_popsize_column',
  interactive = TRUE)
 
 # static pointmap with plot title but no legend ----------------------------------
 geo_plot(data = my_geo_data,
- geography_col = region_data_column,
+ geography_col = 'region_data_column',
  attribute_data = my_point_location_data,
+ points_col = 'my_point_name_variable',
  plot_type = 'pointmap',
  plot_title = 'My Point Locations',
  legend_title = 'none')

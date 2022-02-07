@@ -8,10 +8,11 @@ geo_distance(
   data,
   geography_col,
   location_data,
+  points_col,
   n_nearest = 3,
+  levels = 5,
   plot_title = NA,
   legend_title = NA,
-  legend_position = "left",
   plot = TRUE
 )
 }
@@ -29,18 +30,22 @@ and latitude), titled 'x' and 'y'. Coordinate reference system (CRS) for these d
 automatically transformed to match that of the input geographic data.  If CRS is missing
 for location data, it is assumed to be WGS84.  REQUIRED.}
 
+\item{points_col}{Name of the data column containing the label or value uniquely identifying
+each particular point location. REQUIRED.}
+
 \item{n_nearest}{number of point locations to use in calculation of proximity (average
 distance from centroid to n nearest locations of interest).  Default is 3.  If value is
 set at 1, proximity for each geographic unit will simply be the distance from the centroid
 to the nearest location. Must be specified as a positive integer value.  OPTIONAL.}
 
+\item{levels}{Preferred number of shading categories representing proximity for each geographic
+regions.  Default is 5.  Generates equally sized categories of round numbers, resulting in a
+number of levels close to, but not necessarily exactly, the specified number of levels. OPTIONAL.}
+
 \item{plot_title}{Main title of plot.  If omitted, no title is shown. OPTIONAL.}
 
 \item{legend_title}{Title of plot legend.  If 'none', legend is removed. If no value
-is given, geography_col name is used. OPTIONAL.}
-
-\item{legend_position}{location of legend relative to plot.  Can be set as "left" (default)
-"right", "top", or "bottom". OPTIONAL.}
+is given, default title 'mean_distance" is used. OPTIONAL.}
 
 \item{plot}{TRUE (default) or FALSE, indicating whether or not a plot should be
 generated. If FALSE, a dataset is returned containing the calculated proximity values
