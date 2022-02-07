@@ -66,3 +66,26 @@ All data files used in the examples are freely available online. For
 ease-of-use, certain data files are also included here as a 7-zip file
 
 <https://github.com/cpacc/geode/blob/main/zip/example_data.7z>
+
+## Updates (February 2022)
+
+A new version of geode has been posted as of February 7, 2022. This new
+version contains several improvements and fixes and is meant to be more
+compatible with the **ShinyGeode** interface.
+
+*Please update your geode package directly from R, following the
+installation instructions above.*
+
+Updates included in geode version 0.1.2 include
+
+-   full mapping functionality found in `geo_plot()` has also been added
+    to `geo_distance()`, `geo_detect()` and `geo_calcualte()`
+-   interactive mapping in `geo_plot()` is now available for pointmaps
+    as well as choropleth maps
+-   the `validity_check` option in `geo_import()` now adds the results
+    as a column in the imported data object and automatically fixes
+    invalid geographies; a message is provided indicating if invalid
+    geographies were detected and fixed
+-   the `geo_plot()` function now check for and fixes invalid
+    geographies prior to plotting; a message is provided indicating if
+    invalid geographies were detected and fixed
