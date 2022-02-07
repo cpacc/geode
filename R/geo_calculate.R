@@ -76,15 +76,9 @@ geo_calculate <- function(data,
     stop("statistic argument must be either 'local_ac' or 'global_ac'", call. = FALSE)
   }
 
-  # check that specified var column exists in dataset
-  if (!deparse(substitute(var)) %in% colnames(data)) {
-    stop("Specified var column does not exist", call. = FALSE)
-  }
+  # allow user specified data columns to be quoted or bare names
+  var <- as.character(rlang::ensym(var))
 
-  # check that specified denom column exists in dataset
-  if (!missing(denom) & !deparse(substitute(denom)) %in% colnames(data)) {
-    stop("Specified denom column does not exist", call. = FALSE)
-  }
 
   # check that transparency value (if provided) is between 0 and 1
   if (!is.na(transparency) & (transparency > 1 | transparency < 0) ) {
@@ -96,15 +90,21 @@ geo_calculate <- function(data,
     transparency <- 0.6
   }
 
-  if (missing(hover_id)) {
-    hover_id <- deparse(substitute(var))
-  } else {
-    hover_id <- deparse(substitute(hover_id))
+  # check that specified var column exist in dataset
+  if (!any(names(data) == var)) {
+    stop("Specified var column does not exist", call. = FALSE)
   }
 
-  # check that specified hover_id column exists in dataset
-  if (!hover_id %in% colnames(data)) {
-    stop("Specified hover_id does not exist", call. = FALSE)
+  # hover_id defaults to specified geography column if missing
+  if (missing(hover_id)) {
+    hover_id <- var
+  } else {
+    hover_id <- as.character(rlang::ensym(hover_id))
+  }
+
+  # check that specified hover_id column exist in dataset
+  if (!any(names(data) == hover_id)) {
+    stop("Specified hover_id column does not exist", call. = FALSE)
   }
 
   # check that input data is an sf object
@@ -115,19 +115,19 @@ geo_calculate <- function(data,
 
 
   # convert analysis variable(s) to numeric (will give warning if non-numeric)
-  var <- deparse(substitute(var))
   varn <- as.numeric(data[[var]])
 
   if (missing(denom)) {
-
     data[[var]] <- varn
+  }
 
-  } else {
-
-    denom <- deparse(substitute(denom))
+  if(!missing(denom)) {
+    denom <- as.character(rlang::ensym(denom))
+    if (!any(names(data) == denom)) {
+      stop("Specified denom column does not exist", call. = FALSE)
+    }
     denomn <- as.numeric(data[[denom]])
     data[[var]] <- varn / denomn
-
   }
 
 
@@ -233,7 +233,9 @@ geo_calculate <- function(data,
                         main.title.position = "center",
                         frame = FALSE) +
 
-        tmap::tmap_options(show.messages = FALSE, show.warnings = FALSE) +
+        tmap::tmap_options(show.messages = FALSE,
+                           show.warnings = FALSE,
+                           check.and.fix = TRUE) +
 
         tmap::tmap_options(zissou) +
 

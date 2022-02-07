@@ -15,9 +15,11 @@
 #' a simplified dataset by removing vertices; useful for creating smaller, more manageable
 #' working versions of large shapefiles. OPTIONAL.
 #' @param validity_check TRUE or FALSE (default). If importing a shapefile, optionally
-#' runs a validity check on each of the geometries and prints the results.  Geometries
-#' may be invalid due to, for example, slivers or self-intersections; such issues may
-#' be present in the imported source file, or arise during simplification. OPTIONAL.
+#' runs a validity check on each of the geometries and adds the results as a new column
+#' "valid_geometry" in the imported data object.  Invalid geometries are automatically
+#' fixed during import.  Geometries may be invalid due to, for example, slivers or
+#' self-intersections; such issues may be present in the imported source file, or arise
+#' during simplification. OPTIONAL.
 #'
 #' @return Returns a simple features (if source is a shapefile) or tibble
 #' (if source is a csv file) data object
@@ -85,14 +87,20 @@ geo_import <- function(path,
       indat <- sf::st_simplify(x = indat,
                                preserveTopology = TRUE,
                                dTolerance = 1000)
+      message('Spatial geometries simplified during import.
+              Spatial calculations are not recommended when using simplified geometries.')
+
     }
 
     # optionally perform validity check on shapefile
     if (validity_check == TRUE) {
-      validity_check <- sf::st_is_valid(x = indat,
-                      reason = TRUE)
-      message('Validity check for each geometry: ')
-      print(validity_check)
+      validity_check <- sf::st_is_valid(x = indat, reason = TRUE)
+      validity_check <- tibble::tibble(valid_geometry = validity_check)
+      indat <- dplyr::bind_cols(indat, validity_check)
+      indat <- sf::st_make_valid(indat)
+      message('Validity check performed. Any invalid geometries were fixed.
+              See new column "valid_geometry" in imported file.')
+
     }
 
 

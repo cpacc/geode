@@ -88,11 +88,6 @@ geo_detect <- function(data,
     stop("Method must be one of 'kulldorff_binomial' or 'kulldorff_poisson'", call. = FALSE)
   }
 
-  # check that input data object exists
-  # if (exists(deparse(substitute(data))) == FALSE) {
-  #   stop("Data object (data) does not exist", call. = FALSE)
-  # }
-
 
   # check expected counts are included but not needed
   if (method == 'kulldorff_binomial' & !is.null(expected_counts)) {
@@ -109,22 +104,46 @@ geo_detect <- function(data,
     transparency <- 0.6
   }
 
+  # allow user specified data columns to be quoted or bare names
+  counts <- as.character(rlang::ensym(counts))
+  pop <- as.character(rlang::ensym(pop))
+
+
+  # hover_id defaults to specified geography column if missing
   if (missing(hover_id)) {
-    hover_id <- deparse(substitute(counts))
+    hover_id <- counts
   } else {
-    hover_id <- deparse(substitute(hover_id))
+    hover_id <- as.character(rlang::ensym(hover_id))
   }
 
-  # check that specified hover_id column exists in dataset
-  if (!hover_id %in% colnames(data)) {
-    stop("Specified hover_id does not exist", call. = FALSE)
+
+  # check that specified columns exist in dataset
+  if (!any(names(data) == counts)) {
+    stop("Specified counts column does not exist", call. = FALSE)
   }
+
+  if (!any(names(data) == pop)) {
+    stop("Specified pop column does not exist", call. = FALSE)
+  }
+
+  if (!any(names(data) == hover_id)) {
+    stop("Specified hover_id column does not exist", call. = FALSE)
+  }
+
+
+  # if (missing(hover_id)) {
+  #   hover_id <- deparse(substitute(counts))
+  # } else {
+  #   hover_id <- deparse(substitute(hover_id))
+  # }
+  #
+  # # check that specified hover_id column exists in dataset
+  # if (!hover_id %in% colnames(data)) {
+  #   stop("Specified hover_id does not exist", call. = FALSE)
+  # }
 
   # convert analysis variable(s) to numeric (will give warning if non-numeric)
-  counts <- deparse(substitute(counts))
   counts_n <- as.numeric(data[[counts]])
-
-  pop <- deparse(substitute(pop))
   pop_n <- as.numeric(data[[pop]])
 
 
@@ -150,7 +169,12 @@ geo_detect <- function(data,
 
   if (method == 'kulldorff_poisson' & !is.null(expected_counts)) {
 
-    expected_counts <- deparse(substitute(expected_counts))
+    expected_counts <- as.character(rlang::ensym(expected_counts))
+
+    if (!any(names(data) == expected_counts)) {
+      stop("Specified expected_counts column does not exist", call. = FALSE)
+    }
+
     expected_counts_n <- as.numeric(data[[expected_counts]])
 
   }
@@ -255,7 +279,9 @@ geo_detect <- function(data,
                       main.title.position = "center",
                       frame = FALSE) +
 
-      tmap::tmap_options(show.messages = FALSE, show.warnings = FALSE) +
+      tmap::tmap_options(show.messages = FALSE,
+                         show.warnings = FALSE,
+                         check.and.fix = TRUE) +
 
       tmap::tmap_mode("view")
 

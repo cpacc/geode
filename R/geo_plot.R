@@ -4,7 +4,9 @@
 #' from geospatial and attribute data.
 #'
 #' @param data Input data for plotting; must be a simple features (sf)
-#' shape object, e.g., imported by geo_import(). REQUIRED.
+#' shape object, e.g., imported by geo_import(). REQUIRED. (Note: if input data
+#' contains invalid geometries, a warning will be provided and the geometries
+#' will be automatically fixed prior to plotting)
 #' @param geography_col Name of the data column containing the feature,
 #' e.g., geographic units, population size, etc., to be plotted. REQUIRED.
 #' @param attribute_data Name of the dataset containing attributes, e.g., points,
@@ -13,6 +15,9 @@
 #' system (CRS) for attribute data is automatically transformed to match that of
 #' input geographic data.  If CRS is missing for attribute data, it is assumed to be
 #' WGS84. REQUIRED (for pointmaps and heatmaps only).
+#' @param points_col Name of the data column containing the label or value to be shown
+#' when hovering over a particular point location.  For interactive pointmaps only.
+#' Default is the first column in the specified attribute dataset.  OPTIONAL.
 #' @param plot_type Name of one of the predefined plot types: current options
 #' are 'choropleth', 'pointmap' and 'heatmap'. REQUIRED.
 #' @param style Name of a defined output style.  User defined output styles can be
@@ -33,8 +38,8 @@
 #' Default is the name or value given in specified geography_col.  OPTIONAL.
 #' @param plot_title Main title of plot.  If omitted, no title is shown. Applies only to static
 #' image maps. OPTIONAL.
-#' @param legend_title Title of plot legend.  If 'none', legend is removed.
-#' If no value is given, feature_col name is used. OPTIONAL.
+#' @param legend_title Title of plot legend. If no value is given, geography_col name is used.
+#' In static maps, the legend is removed if legend_title = 'none'.  OPTIONAL.
 #' @param scale_bar TRUE or FALSE (default).  Indicating whether reference scale
 #' bar should be shown (bottom left of plot). Applies only to static image maps. OPTIONAL.
 #' @param compass TRUE or FALSE (default).  Indicating whether reference compass
@@ -48,23 +53,24 @@
 #' @examples
 #'# simple static choropleth map with plot title and legend title ------------------
 #'geo_plot(data = my_geo_data,
-#'  geography_col = region_data_column,
+#'  geography_col = 'region_data_column',
 #'  plot_type = 'choropleth',
 #'  plot_title = 'My Geographic Regions',
 #'  legend_title = 'Region Name')
 #'
 #'# interactive choropleth map with partial transparency of shaded regions ---------
 #'geo_plot(data = my_geo_data,
-#'  geography_col = region_data_column,
+#'  geography_col = 'region_data_column',
 #'  plot_type = 'choropleth',
 #'  transparency = 0.5,
-#'  hover_id = region_popsize_column,
+#'  hover_id = 'region_popsize_column',
 #'  interactive = TRUE)
 #'
 #'# static pointmap with plot title but no legend ----------------------------------
 #'geo_plot(data = my_geo_data,
-#'  geography_col = region_data_column,
+#'  geography_col = 'region_data_column',
 #'  attribute_data = my_point_location_data,
+#'  points_col = 'my_point_name_variable',
 #'  plot_type = 'pointmap',
 #'  plot_title = 'My Point Locations',
 #'  legend_title = 'none')
@@ -72,6 +78,7 @@
 geo_plot <- function(data,
                      geography_col,
                      attribute_data = NA,
+                     points_col,
                      plot_type,
                      style = NA,
                      transparency = NA,
@@ -96,6 +103,15 @@ geo_plot <- function(data,
          Import data first using geo_import()", call. = FALSE)
   }
 
+
+  # check that input data has valid geometries; if not, fix
+  if (!all(sf::st_is_valid(data))) {
+    warning("Input data contains invalid geometries.
+            These were automatically fixed in the output plot.", call. = FALSE)
+    data <- sf::st_make_valid(data)
+  }
+
+
   # check that plot_type is a valid choice
   if (!plot_type %in% c('choropleth', 'pointmap', 'heatmap')) {
     stop("plot_type must be one of 'choropleth', 'pointmap' or 'heatmap'", call. = FALSE)
@@ -106,45 +122,69 @@ geo_plot <- function(data,
     stop("attribute_data must be specified if plot_type is 'pointmap' or 'heatmap'", call. = FALSE)
   }
 
+  # check that attribute_data is specified if points_col is specified
+  if (!missing(points_col) && is.na(attribute_data) ) {
+    stop("attribute_data must be specified if providing a points_col value", call. = FALSE)
+  }
+
   # check that transparency value (if provided) is between 0 and 1
   if (!is.na(transparency) & (transparency > 1 | transparency < 0) ) {
     stop("transparency value must be between 0 and 1", call. = FALSE)
   }
 
+  # allow user specified data columns to be quoted or bare names
+  geography_col <- as.character(rlang::ensym(geography_col))
 
-  if (missing(hover_id)) {
-    hover_id <- deparse(substitute(geography_col))
+
+  # set point names column to be first variable in attribute dataset if not specified
+  if(missing(points_col)){
+    points_col <- names(attribute_data)[1]
   } else {
-    hover_id <- deparse(substitute(hover_id))
+    points_col <- as.character(rlang::ensym(points_col))
+
+    # check that specified points column exists in attribute dataset
+    if (!any(names(attribute_data) == points_col)) {
+      stop("Specified points_col does not exist", call. = FALSE)
+    }
   }
 
-  geography_col <- deparse(substitute(geography_col))
+
+  # hover_id defaults to specified geography column if missing
+  if (missing(hover_id)) {
+    hover_id <- geography_col
+  } else {
+    hover_id <- as.character(rlang::ensym(hover_id))
+    }
+
 
   # check that specified geography column exists in dataset
-  if (!geography_col %in% colnames(data)) {
+  if (!any(names(data) == geography_col)) {
     stop("Specified geography_col does not exist", call. = FALSE)
   }
 
   # check that specified hover_id column exists in dataset
-  if (!hover_id %in% colnames(data)) {
+  if (!any(names(data) == hover_id)) {
     stop("Specified hover_id does not exist", call. = FALSE)
   }
-
-
 
 
 
   # set mapping transparency to opaque if value not provided
   if (is.na(transparency)) {
     transparency <- 1.0
-    }
+  }
+
+  # set legend title to geography_col if not specified
+  if (is.na(legend_title)) {
+    legend_title <- geography_col
+  }
 
   n_geo_regions <- dplyr::n_distinct(data[[geography_col]])
 
 
   # if for pointmap or heatmap, transform CRS of attribute data
   if (plot_type %in% c('pointmap', 'heatmap')) {
-    attribute_data <- attribute_data %>% dplyr::select(id, x, y)
+    attribute_data <- attribute_data %>% dplyr::select(points_col, x, y)
 
     if (is.na(sf::st_crs(attribute_data))) {
       attribute_data <- attribute_data %>% sf::st_as_sf(coords = c('x', 'y'), crs = 4326)
@@ -334,7 +374,7 @@ geo_plot <- function(data,
 
 
 
-  if (plot_type == 'choropleth') {
+  if (plot_type %in% c('choropleth', 'pointmap')) {
 
     #tmap::tmap_options_reset() # reset all options before every plot
 
@@ -354,9 +394,22 @@ geo_plot <- function(data,
                 main.title.position = "center",
                 frame = FALSE) +
 
-      tmap::tmap_options(show.messages = FALSE, show.warnings = FALSE) +
+      tmap::tmap_options(show.messages = FALSE,
+                         show.warnings = FALSE,
+                         check.and.fix = TRUE) +
 
       tmap::tmap_mode("plot")
+
+
+    # add point locations if user specified pointmap
+    if (plot_type == 'pointmap'){
+      out_plot <- out_plot +
+        tmap::tm_shape(shp = attribute_data) +
+        tmap::tm_dots(col = 'black',
+                      size = 0.1,
+                      id = points_col,
+                      legend.show = FALSE)
+    }
 
 
     # optionally show plot with user defined style
@@ -384,7 +437,7 @@ geo_plot <- function(data,
       }
 
     # optionally show plot without legend
-    if (!missing(legend_title) & legend_title == 'none') {
+    if (!is.na(legend_title) & legend_title == 'none') {
       out_plot <- out_plot + tmap::tm_legend(show = FALSE)
     }
 
@@ -418,55 +471,55 @@ geo_plot <- function(data,
   fantasticfox_palette <- wesanderson::wes_palette(name = "FantasticFox1", type = "continuous", n = n_geo_regions)
 
 
-  if (plot_type == 'pointmap') {
-
-    out_plot <- ggplot2::ggplot() +
-
-      ggplot2::geom_sf(data = data, ggplot2::aes(fill = .data[[geography_col]]),
-                       show.legend = TRUE) +
-
-      ggplot2::geom_point(data = attribute_data, ggplot2::aes(x = x, y = y),
-                          colour = 'black', size = 1.1) +
-
-
-      ggthemes::theme_map()
-
-
-    # optionally define colour styles
-    if (is.na(style)) {
-      out_plot <- out_plot + ggplot2::scale_fill_manual(values = pretty_palette)
-    } else if (style == 'zissou') {
-      out_plot <- out_plot + ggplot2::scale_fill_manual(values = zissou_palette)
-    } else if (style == 'royal') {
-      out_plot <- out_plot + ggplot2::scale_fill_manual(values = royal_palette)
-    } else if (style == 'darjeeling') {
-      out_plot <- out_plot + ggplot2::scale_fill_manual(values = darjeeling_palette)
-    } else if (style == 'fantasticfox') {
-      out_plot <- out_plot + ggplot2::scale_fill_manual(values = fantasticfox_palette)
-    }
-
-
-    # optionally specify new legend title
-    if (!missing(legend_title)) {
-      out_plot <- out_plot + ggplot2::labs(fill = legend_title)
-    }
-
-    # optionally show plot without legend
-    if (!missing(legend_title) & legend_title == 'none') {
-      out_plot <- out_plot + ggplot2::theme(legend.position = "none")
-    }
-
-    # optionally specify plot title (centered)
-    if (!missing(plot_title)) {
-      out_plot <- out_plot +
-        ggplot2::ggtitle(plot_title) +
-        ggplot2::theme(plot.title = ggplot2::element_text(hjust = 0.5))
-    }
-
-
-    return(out_plot)
-
-  }
+  # if (plot_type == 'pointmap') {
+  #
+  #   out_plot <- ggplot2::ggplot() +
+  #
+  #     ggplot2::geom_sf(data = data, ggplot2::aes(fill = .data[[geography_col]]),
+  #                      show.legend = TRUE) +
+  #
+  #     ggplot2::geom_point(data = attribute_data, ggplot2::aes(x = x, y = y),
+  #                         colour = 'black', size = 1.1) +
+  #
+  #
+  #     ggthemes::theme_map()
+  #
+  #
+  #   # optionally define colour styles
+  #   if (is.na(style)) {
+  #     out_plot <- out_plot + ggplot2::scale_fill_manual(values = pretty_palette)
+  #   } else if (style == 'zissou') {
+  #     out_plot <- out_plot + ggplot2::scale_fill_manual(values = zissou_palette)
+  #   } else if (style == 'royal') {
+  #     out_plot <- out_plot + ggplot2::scale_fill_manual(values = royal_palette)
+  #   } else if (style == 'darjeeling') {
+  #     out_plot <- out_plot + ggplot2::scale_fill_manual(values = darjeeling_palette)
+  #   } else if (style == 'fantasticfox') {
+  #     out_plot <- out_plot + ggplot2::scale_fill_manual(values = fantasticfox_palette)
+  #   }
+  #
+  #
+  #   # optionally specify new legend title
+  #   if (!missing(legend_title)) {
+  #     out_plot <- out_plot + ggplot2::labs(fill = legend_title)
+  #   }
+  #
+  #   # optionally show plot without legend
+  #   if (!missing(legend_title) & legend_title == 'none') {
+  #     out_plot <- out_plot + ggplot2::theme(legend.position = "none")
+  #   }
+  #
+  #   # optionally specify plot title (centered)
+  #   if (!missing(plot_title)) {
+  #     out_plot <- out_plot +
+  #       ggplot2::ggtitle(plot_title) +
+  #       ggplot2::theme(plot.title = ggplot2::element_text(hjust = 0.5))
+  #   }
+  #
+  #
+  #   return(out_plot)
+  #
+  # }
 
 
 
@@ -489,17 +542,17 @@ geo_plot <- function(data,
 
 
     # optionally specify new legend title
-    if (!missing(legend_title)) {
+    if (!is.na(legend_title)) {
       out_plot <- out_plot + ggplot2::labs(fill = legend_title)
     }
 
     # optionally show plot without legend
-    if (!missing(legend_title) & legend_title == 'none') {
+    if (!is.na(legend_title) & legend_title == 'none') {
       out_plot <- out_plot + ggplot2::theme(legend.position = "none")
     }
 
     # optionally specify plot title
-    if (!missing(plot_title)) {
+    if (!is.na(plot_title)) {
       out_plot <- out_plot +
         ggplot2::ggtitle(plot_title) +
         ggplot2::theme(plot.title = ggplot2::element_text(hjust = 0.5))
