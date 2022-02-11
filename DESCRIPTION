@@ -30,7 +30,9 @@ Imports:
     tidyr (>= 1.1.0),
     tmap (>= 3.3),
     wesanderson (>= 0.3.6),
-    xlsx (>= 0.6.5)
+    xlsx (>= 0.6.5),
+    viridis (>= 0.6.2),
+    rlang (>= 1.0.1)
 URL: https://github.com/cpacc/geode
 BugReports: https://github.com/cpacc/geode/issues
 Suggests: 
